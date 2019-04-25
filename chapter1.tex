@@ -3,8 +3,31 @@
 
 \section*{Test}
 \subsection*{Test}
-\begin{karte}{Testkarte}
-    Hello world.
+\begin{karte}{Definition Algebra}
+    Eine \(K\)-Algebra besteht aus einem Ring \(A\) 
+    und einer Abbildung 
+    \[ \abb{*}{K\times A}{A} \]
+    mit folgenden Eigenschaften:
+    \begin{itemize}
+        \item Die additive Gruppe von \(A\) bildet 
+        zusammen mit \( * \) einen \(K\)-Vektorraum.
+        \item Die Skalarmultiplikation \(*\) ist mit der 
+        Ringmultiplikation verträglich:
+        \[ \alpha * (x \cdot y) = (\alpha * x) \cdot y 
+        = x \cdot (\alpha * y). \]
+    \end{itemize}
+    Eine Abbildung zwischen \(K\)-Algebren ist ein 
+    (\(K\)-)Algebrenhomomorphismus, wenn sie gleichzeitig ein Ring- 
+    und ein \(K\)-Vektorraumhomomorphismus ist.
+\end{karte}
+\begin{karte}{Universelle Eigenschaft des Polynomrings}
+    Ist \(A\) eine \(K\)-Algebra und \( a\in A \), so gibt 
+    es genau einen \\
+    \(K\)-Algebrenhomomorphismus 
+    \[ \abb{\phi}{K[X]}{A} \text{ (Einsetzungshomomorphismus)} \] 
+    mit 
+    \[ \phi(X) = a. \]
+    Ist \( p\in K[X] \), so schreibt man auch \( p(a) := \phi(p) \).\\
 \end{karte}
 
 \end{document}
