@@ -106,7 +106,132 @@
     Dann gilt 
     \[ M_{BB}(f) = M_{B_1B_1}(f_1) \boxplus \cdots \boxplus M_{B_k B_k}(f_k)
     \in M_{ n_1 + \cdot n_k }(K). \]
-    Es gilt außerdem \( \det (A_1 \boxplus \cdots A_k) = \det A_1 \cdots \det A_k \).
+    Es gilt außerdem \( \det (A_1 \boxplus \cdots \boxplus A_k) = \det A_1 \cdots \det A_k \).
+\end{karte}
+
+\subsection*{Jordan-Normalform}
+
+\begin{karte}{\(\lambda\)-Jordankästchen}
+    Die Matrix \(J_n(\lambda)\) heißt \(\lambda\)- Jordankästchen der
+    Länge \(n\).
+    \[J_4(\lambda)\begin{pmatrix}
+        \lambda &0 &0 &0\\
+        1 &\lambda & 0 &0\\
+        0 &1 &\lambda &0\\
+        0 &0 &1 &\lambda
+    \end{pmatrix}\]
+    \(\rk J_n(\lambda) = n-1\)\\
+    \(J_n(0)\) wird auch als Rechtsverschiebung bezeichnet. \(J_n(\lambda)\)
+    als erweiterte \(\lambda\)-Rechtsverschiebung.\\
+    Ein Jordankästchen hat nur den Eigenwert \(\lambda\) mit algebraischer Vielfachheit
+    von \(n\) und geometrischer Vielfachheit \(1\).
+\end{karte}
+
+\begin{karte}{Definition nilpotent}
+    Ein Endomorphismus \(f\), für den es ein \(n \in \N\) mit
+    \[ f^n = \underbrace{f \circ \ldots \circ f}_{n \text{ mal}} = 0 \]
+    gibt, heißt nilpotent.\\
+    \(\spec f = \set{0}\)
+\end{karte}
+
+\begin{karte}{nilpotenter Endomorphismus lineare Unabhängigkeit}
+    Sei \(\abb{f}{V}{V}\) nilpotent. Sei \(v \in V\setminus \set{0}\)
+    und \(d \in \N\) so, dass \(f^d(v) = 0\), aber \(f^{d-1}(v) \neq 0\).
+    Dann ist \((v,f(v),\ldots, f^{d-1}(v))\) linear unabhängig.
+\end{karte}
+
+\begin{karte}{Ähnlichkeit zur Jordan-Normalform Matrizen}
+    Sei \(K\) algebraisch abgeschlossen. Dann ist jede Matrix \(A \in M_n(K)\)
+    zu einer Matrix in Jordan-Normalform ähnlich, d. h. es gibt \(S \in GL_n(K)\)
+    und \(\lambda_1, \ldots, \lambda_k \in K\) und \(n_1, \ldots, n_k \in \N\)
+    mit \(n = n_1 + \ldots + n_k\) so, dass
+    \[ S^{-1}AS = J_{n_1}(\lambda_1) \boxplus \ldots J_{n_k}(\lambda_k) \in M_n(K). \]
+    Die Matrix auf der rechten Seite wird dann eine Jordan-Normalform von \(A\)
+    genannt. Die Basis \((Se_1, \ldots, Se_n)\) wird Jordan-Basis genannt.
+\end{karte}
+
+\begin{karte}{Ähnlichkeit zur Jordan-Normalform Endomorphismen}
+    Sei \(K\) algebraisch abgeschlossen. Sei \(\abb{f}{V}{V}\) ein Endomorphismus
+    eines endlich-dimensionalen \(K\)-Vektorraums \(V\). Dann gibt es eine Basis
+    \(B\) von \(V\) - genannt Jordan-Basis - derart, dass
+    \[ M_ {B,B}(f) = J_{n_1}(\lambda_1) \boxplus \ldots \boxplus J_{n_k}(\lambda_k)
+    \in M_n(K) \]
+\end{karte}
+
+\begin{karte}{Satz Ähnlichkeitsklassifikation}
+    Sei \(K\) algebraisch abgeschlossen. Zwei Matrizen in \(M_n(K)\) sind genau dann 
+    ähnlich, wenn sie Jordan-Normalformen besitzen, die bis auf eine Permutation der 
+    Jordankästchen übereinstimmen.\\
+    Sei \(F\) ein Teilkörper von \(K\). Sind \(A, B \in M_n(F)\) über \(K\)
+    ähnlich, dann auch über \(F\).
+\end{karte}
+
+\subsection*{Eindeutigkeit \& Struktur der JNF}
+
+\begin{karte}{Verallgemeinerte geometrische Vielfachheiten}
+    Sei \(\abb{f}{V}{V}\) ein Endomorphismus eines endlich-dimensionalen
+    \(K\)-Vektorraums. Ist \(\lambda \in \spec f\), so bezeichnen wir die Zahlen
+    \[ m_{\lambda, s}(f) = \dim_K \ker(f-\lambda \id_V)^s \text{ für } s \in \N \]
+    als verallgemeinerte geometrische Vielfachheiten des Eigenwerts
+    \(\lambda\) von \(f\). Analog definiert man \(m_{\lambda, s}(A)\) für eine Matrix
+    \(A \in M_n(K)\).\\
+    Es gilt \(m_{\lambda, s}(J_n(\lambda)) = \min{s,n}\).
+\end{karte}
+
+\begin{karte}{Ähnlichkeit und verallgemeinerte geometrische Vielfachheiten}
+    Sind \(A, B \in M_n(K)\) ähnlich, so ist
+    \[ m_{\lambda, s}(A) = m_{\lambda, s}(B) \; \forall s \in \N_0, \lambda \in K \]
+\end{karte}
+
+\begin{karte}{Definition Hauptraum}
+    Sei \(f\) ein Endomorphismus und \(\lambda\) ein Eigenwert von \(f\). Dann ist
+    \[ H_\lambda(f) := \bigcup_{s \in \N} \ker (f-\lambda \id)^s \]
+    der Hauptraum von \(f\) zum Eigenwert \(\lambda\).\\
+    Sei \(e\) die algebraische Vielfachheit von \(\lambda\), dann
+    \[ H_\lambda(f) = \ker(f-\lambda\id)^e. \]
+    \[ \dim H_\lambda(f) = m_{\lambda, e}(f) = e. \]
+\end{karte}
+
+\begin{karte}{Hauptraumzerlegung}
+    Sei \(K\) ein beliebiger Körper und \(V\) ein endlich-dimensionaler \(K\)-Vektorraum.
+    Sei \(\abb{f}{V}{V}\) ein Endomorphismus. Wenn \(\chi_f\) in Linearfaktoren
+    zerfällt und \(\lambda_1, \ldots, \lambda_r\) die verschiedenen Eigenwerte
+    von \(f\) sind, dann gilt
+    \[ V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f) \]
+\end{karte}
+
+\begin{karte}{Interpretation allgebraische und geometrische Vielfachheit}
+    Sei \(A \in M_n(K)\) und \(\lambda \in \spec A\). Weiter sei eine JNF von \(A\)
+    gegeben.
+    \begin{enumerate}
+        \item Die algebraische Vielfachheit von \(\lambda\) ist gleich der Summe der
+        Längen aller \(\lambda\)-Jordankästchen.
+        \item Die geometrische vielfachheit \(m_{\lambda,1}(A)\) von \(\lambda\) ist
+        gleich der Anzahl aller \(\lambda\)-Jordankästchen.
+        \item Weiter ist
+        \[ 2m_{\lambda, s}(A)-m_{\lambda, s-1}(A) - m_{\lambda,s+1}(A) \]
+        die Anzahl der \(\lambda\)-Jordankästchen der Länge \(s\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Eindeutigkeit JNF}
+    Die Jordan-Normalform einer Matrix ist bis auf Permutation der Jordankästchen eindeutig.
+\end{karte}
+
+\subsection*{Existenz der JNF}
+
+\begin{karte}{JNF von nilpotenten Endomorphismen}
+    Sei \(\abb{f}{V}{V}\) ein nilpotenter Endomorphismus eines endlich-dimensionalen
+    \(K\)-Vektorraums \(V\). Dann gibt es eine Basis \(B\) von \(V\) derart, dass
+    \[ M_{B,B}(f) = J_{n_1}(0) \boxplus \cdots \boxplus J_{n_k}(0) \in M_n(K). \]
+\end{karte}
+
+\begin{karte}{nilpotente Endomorphismen Untervektorraumkomplemente}
+    Sei \(\abb{f}{V}{V}\) ein nilpotenter Endomorphismus eines endlich-dimensionalen
+    \(K\)-Vektorraums \(V\). Sei \(f^d = 0\) und \(u \in V\) ein Vektor mit
+    \(f^{d-1}(u) \neq 0\). Dann besitzt der \(f\)-zyklische Untervektorraum
+    \(U := \langle \set{u, f(u), \ldots, f^{d-1}(u)}\rangle\) ein \(f\)-invariantes
+    Komplement.
 \end{karte}
 
 \end{document}
