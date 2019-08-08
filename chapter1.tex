@@ -120,7 +120,7 @@
         0 &1 &\lambda &0\\
         0 &0 &1 &\lambda
     \end{pmatrix}\]
-    \(\rk J_n(\lambda) = n-1\)\\
+    \(\rk J_n(0) = n-1\)\\
     \(J_n(0)\) wird auch als Rechtsverschiebung bezeichnet. \(J_n(\lambda)\)
     als erweiterte \(\lambda\)-Rechtsverschiebung.\\
     Ein Jordankästchen hat nur den Eigenwert \(\lambda\) mit algebraischer Vielfachheit
@@ -134,7 +134,7 @@
     \(\spec f = \set{0}\)
 \end{karte}
 
-\begin{karte}{nilpotenter Endomorphismus lineare Unabhängigkeit}
+\begin{karte}{Nilpotenter Endomorphismus lineare Unabhängigkeit}
     Sei \(\abb{f}{V}{V}\) nilpotent. Sei \(v \in V\setminus \set{0}\)
     und \(d \in \N\) so, dass \(f^d(v) = 0\), aber \(f^{d-1}(v) \neq 0\).
     Dann ist \((v,f(v),\ldots, f^{d-1}(v))\) linear unabhängig.
@@ -145,7 +145,8 @@
     zu einer Matrix in Jordan-Normalform ähnlich, d. h. es gibt \(S \in GL_n(K)\)
     und \(\lambda_1, \ldots, \lambda_k \in K\) und \(n_1, \ldots, n_k \in \N\)
     mit \(n = n_1 + \ldots + n_k\) so, dass
-    \[ S^{-1}AS = J_{n_1}(\lambda_1) \boxplus \ldots J_{n_k}(\lambda_k) \in M_n(K). \]
+    \[ S^{-1}AS = J_{n_1}(\lambda_1) \boxplus \ldots \boxplus 
+    J_{n_k}(\lambda_k) \in M_n(K). \]
     Die Matrix auf der rechten Seite wird dann eine Jordan-Normalform von \(A\)
     genannt. Die Basis \((Se_1, \ldots, Se_n)\) wird Jordan-Basis genannt.
 \end{karte}
@@ -169,13 +170,13 @@
 \subsection*{Eindeutigkeit \& Struktur der JNF}
 
 \begin{karte}{Verallgemeinerte geometrische Vielfachheiten}
-    Sei \(\abb{f}{V}{V}\) ein Endomorphismus eines endlich-dimensionalen
+    Sei \(\abb{f}{V}{V}\) ein Endomorphismus eines endlich-dimensionalen \\
     \(K\)-Vektorraums. Ist \(\lambda \in \spec f\), so bezeichnen wir die Zahlen
     \[ m_{\lambda, s}(f) = \dim_K \ker(f-\lambda \id_V)^s \text{ für } s \in \N \]
     als verallgemeinerte geometrische Vielfachheiten des Eigenwerts
     \(\lambda\) von \(f\). Analog definiert man \(m_{\lambda, s}(A)\) für eine Matrix
     \(A \in M_n(K)\).\\
-    Es gilt \(m_{\lambda, s}(J_n(\lambda)) = \min{s,n}\).
+    Es gilt \(m_{\lambda, s}(J_n(\lambda)) = \min\set{s,n}\).
 \end{karte}
 
 \begin{karte}{Ähnlichkeit und verallgemeinerte geometrische Vielfachheiten}
@@ -206,7 +207,7 @@
     \begin{enumerate}
         \item Die algebraische Vielfachheit von \(\lambda\) ist gleich der Summe der
         Längen aller \(\lambda\)-Jordankästchen.
-        \item Die geometrische vielfachheit \(m_{\lambda,1}(A)\) von \(\lambda\) ist
+        \item Die geometrische Vielfachheit \(m_{\lambda,1}(A)\) von \(\lambda\) ist
         gleich der Anzahl aller \(\lambda\)-Jordankästchen.
         \item Weiter ist
         \[ 2m_{\lambda, s}(A)-m_{\lambda, s-1}(A) - m_{\lambda,s+1}(A) \]
@@ -215,7 +216,8 @@
 \end{karte}
 
 \begin{karte}{Eindeutigkeit JNF}
-    Die Jordan-Normalform einer Matrix ist bis auf Permutation der Jordankästchen eindeutig.
+    Die Jordan-Normalform einer Matrix ist bis auf Permutation der \\
+    Jordankästchen eindeutig.
 \end{karte}
 
 \subsection*{Existenz der JNF}
@@ -226,7 +228,7 @@
     \[ M_{B,B}(f) = J_{n_1}(0) \boxplus \cdots \boxplus J_{n_k}(0) \in M_n(K). \]
 \end{karte}
 
-\begin{karte}{nilpotente Endomorphismen Untervektorraumkomplemente}
+\begin{karte}{Nilpotente Endomorphismen Untervektorraumkomplemente}
     Sei \(\abb{f}{V}{V}\) ein nilpotenter Endomorphismus eines endlich-dimensionalen
     \(K\)-Vektorraums \(V\). Sei \(f^d = 0\) und \(u \in V\) ein Vektor mit
     \(f^{d-1}(u) \neq 0\). Dann besitzt der \(f\)-zyklische Untervektorraum
