@@ -236,4 +236,51 @@
     Komplement.
 \end{karte}
 
+\subsection*{Beispiele und Berechnungen}
+
+\begin{karte}{JNF Rechenverfahren für nilpotente Endomorphismen}
+    \begin{enumerate}
+        \item Bestimme \(n_1 \in \N\) so, dass \(f^{n_1} = 0 \) und
+        \(f^{n_1-1} \neq 0\).
+        \item Bestimme eine Basis \((v^{(1)}_1,\ldots,v^{(1)}_{a_1})\)
+        des Komplements von \(\ker f^{n_1-1}\).
+        \item Definiere \(B_1\) als das Tupel\\
+        \( \left(v_1^{(1)}, \ldots, f^{n_1-1}\left(v_1^{(1)}\right), \ldots,
+        v_{a_1}^{(1)}, \ldots, f^{n_1-1}\left(v_{a_1}^{(1)}\right)\right) \)\\
+        Dann ust \(V_1:=\langle B_1 \rangle \; f\)-invariant und
+        \( M_{B_1,B_1}(f\vert_{V_1}) = J_{n_1}(0) \boxplus \cdots \boxplus J_{n_1}(0) \)
+        \item Sei \(B_i\) gegeben. Bestimme eine Basis \((v_1^{(i+1)},\ldots, v_{a_{i+1}}^{(i+1)})\)
+        des Komplements des Untervektorraums
+        \[ \ker(f^{n_{i+1}-1}) + (V_1 \cap \ker(f^{n_{i+1}})) \subset \ker f^{n_{i+1}} \]
+        und setze:
+        \[ B_{i+1} = \left(v_{i+1}^{(i+1)}, \ldots, f^{n_{i+1}-1}\left(v_{i+1}^{(i+1)}\right), \ldots,
+        v_{a_{i+1}}^{(i+1)}, \ldots, f^{n_{i+1}-1}\left(v_{a_{i+1}}^{(i+1)}\right)\right) \]
+        \[ V_{i+1} = V_i + \langle B_{i+1} \rangle \]
+        \item Die Konkatenation von den \(B_i\) ist eine Jordan-Basis für \(f\).
+    \end{enumerate}    
+\end{karte}
+
+\begin{karte}{JNF Rechenverfahren allgemein}
+    Sei \(f\) ein Endomorphismus eines \(n\)-dimensionalen \(K\)-Vektorraums \(V\),
+    für den \(\chi_f(X)\) in Linearfaktoren zerfällt.
+    \begin{enumerate}
+        \item Man zerlege das charakteristische Polynom von \(f\) in
+        Linearfaktoren
+        \[ \chi_f(X) = (-1)^n (X-\lambda_1)^{n_1}\cdots (X-\lambda_k)^{n_k} \]
+        mit verschiedenen \(\lambda_1, \ldots, \lambda_k \in K\)
+        \item Für jedes \(i \in \set{i,\ldots,k}\) berechne gemäß Rechenverfahren
+        1.58 eine Jordan-Basis \(B_i\) des nilpotenten Endomorphismus
+        \( (f-\lambda \id)\vert_{H_{\lambda_i}(f)} \).
+        \item Die Konkatenation der \(B_i\) bildet eine Jordan-Basis von \(f\),
+        weil \(V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f)\).
+    \end{enumerate}
+\end{karte}
+
+\subsection*{Anwendung der Jordan-Normalform}
+
+\begin{karte}{Ähnlichkeit transponierte Matrix}
+    Sei \(K\) ein beliebiger Körper und \(A \in M_n(K)\). Dann ist 
+    \(A\) zur transponierten Matrix \(A^T\) ähnlich.
+\end{karte}
+
 \end{document}
