@@ -5,18 +5,18 @@
 \section*{Geometrie von \(\R, \C\)-Vektorräumen}
 \subsection*{Euklidische, unitäre VR}
 
-\begin{karte}{Definition Biliearform}
+\begin{karte}{Definition Bilinearform}
      Sei \(K\) ein Körper und \(V\) ein \(K\)-Vektorraum. Eine
-     Biliearform auf \(V\) ist eine bilieare Abbildung 
+     Bilinearform auf \(V\) ist eine bilineare Abbildung 
      \(V \times V \rightarrow K\).\\
-     Eine Biliearform \(\abb{b}{V\times V}{K}\) heißt symmetrisch,
+     Eine Bilinearform \(\abb{b}{V\times V}{K}\) heißt symmetrisch,
      wenn
      \[ b(x,y) = b(y,x) \]
      für alle \(x, y \in V \) gilt.
 \end{karte}
 
-\begin{karte}{Definitheit von Biliearformen}
-     Eine Biliearform \(b\) auf einem reellen Vektorraum \(V\) heißt
+\begin{karte}{Definitheit von Bilinearformen}
+     Eine Bilinearform \(b\) auf einem reellen Vektorraum \(V\) heißt
      \begin{description}
          \item[positiv definit,] falls \(b(x,x) > 0 \; \forall x \in V \setminus \set{0}\)
          \item[positiv semidefinit,] falls \(b(x,x) \geq 0 \; \forall x \in V\)
@@ -29,28 +29,29 @@
 
 \begin{karte}{Definition Skalarprodukt}
     Sei \(V\) ein \(\R\)-Vektorraum. Ein Skalarprodukt auf \(V\) ist eine
-    symmetrische, positiv definite Biliearform.\\
+    symmetrische, positiv definite Bilinearform.\\
     Eine positive definite hermitesche Sesquilinearform heißt hermitesches Skalarprodukt.
 \end{karte}
 
 \begin{karte}{Definition Sesquilinearform}
     Sei \(V\) ein \(\C\)-Vektorraum. Eine Abbildung \(\abb{b}{V\times V}{\C}\)
-    heißt Sesquilinearform, wenn für jedes \(x\in V\) die Abbildung
+    heißt \textit{Sesquilinearform}, wenn für jedes \(x\in V\) die Abbildung
     \[ \abb{b(x, \cdot)}{V}{\C} \]
-    \(\C\)-Linear ist und die Abbildung
+    \(\C\)-linear ist und die Abbildung
     \[ \abb{b(\cdot, x)}{V}{\C} \]
-    \(\R\)-Linear ist und für jedes \(\lambda \in \C\) und \(y \in V\) gilt
+    \(\R\)-linear ist und für jedes \(\lambda \in \C\) und \(y \in V\) gilt
     \[ b(\lambda y, x) = \overline{\lambda} b(y,x) \]
 \end{karte}
 
 \begin{karte}{Definition konjugiert linear}
-    Eine rell lineare Abbildung \(\abb{f}{V}{W}\) zwischen komplexen Vektorräumen,
+    Eine reell lineare Abbildung \(\abb{f}{V}{W}\) zwischen komplexen Vektorräumen,
     die \(f(\lambda v) = \overline{\lambda}f(v)\) für jedes \(\lambda \in \C\)
-    und \(v \in V\) erfüllt, heißt auch konjugiert linear.
+    und \(v \in V\) erfüllt, heißt auch \textit{konjugiert linear}.
 \end{karte}
 
 \begin{karte}{Definition hermitesche Sesquilinearform}
-    Sei \(\abb{b}{V\times V}{\C}\) eine Sesquilinearform. Dann heißt \(b\) hermitesch,
+    Sei \(\abb{b}{V\times V}{\C}\) eine Sesquilinearform. 
+    Dann heißt \(b\) \textit{hermitesch},
     wenn für alle \(x,y \in V\)
     \[ b(x,y) = \overline{b(y,x)} \]
     gilt.\\
@@ -59,9 +60,12 @@
 \end{karte}
 
 \begin{karte}{Definition adjungierte Matrix}
-    Für eine Matrix \(A \in M_{m,n}(\C)\) ist ihre adjungierte Matrix \(A^H \in M_{n,m}(\C)\)\\
-    diejenige Matrix, die man erhält, wenn man \(A\) transponiert und alle Matrixeinträge 
-    komplex konjugiert. Man bezeichnet \(A^H\) auch als das hermitesch Transponierte von \(A\).\\
+    Für eine Matrix \(A \in M_{m,n}(\C)\) ist ihre 
+    adjungierte Matrix \(A^H \in M_{n,m}(\C)\)
+    diejenige Matrix, die man erhält, wenn man 
+    \(A\) transponiert und alle Matrixeinträge 
+    komplex konjugiert. Man bezeichnet \(A^H\) 
+    auch als das hermitesch Transponierte von \(A\).\\
     Es gelten die Rechenregeln:\\
     \[ \overline{A} + \overline{B} = \overline{A + B} \]
     \[ \overline{A} \cdot \overline{B} = \overline{AB} \]
@@ -105,12 +109,13 @@
     \(\norm{\cdot}_2\) ist die von \(\scalarprod{\cdot}{\cdot}_2\) induzierte Norm und
     wird als euklidische Norm bezeichnet.\\
     Die Supremumsnorm ist definiert durch 
-    \[ \abb{\norm{\cdot}_\infty}{\R^n}{[0,\infty)}, x \mapsto \max\set{\abs{x_1}, \ldots, \abs{x_n}} \]
+    \[ \abb{\norm{\cdot}_\infty}{\R^n}{[0,\infty)}, 
+    x \mapsto \max\set{\abs{x_1}, \ldots, \abs{x_n}}. \]
 \end{karte}
 
 \begin{karte}{Ungleichung von Cauchy-Schwarz}
     Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer oder unitärer Vektorraum
-    und \(\norm{\cdot}\) die Norm. Dann gilt
+    und \(\norm{\cdot}\) eine Norm. Dann gilt
     \[ \abs{\scalarprod{x}{y}} \leq \norm{x} \cdot \norm{y}. \]
     Gleichheit tritt genau dann ein, wenn \(x\) und \(y\) linear abhängig sind.
 \end{karte}
