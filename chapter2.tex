@@ -1,0 +1,176 @@
+\documentclass[main.tex]{subfiles}
+
+\begin{document}
+
+\section*{Geometrie von \(\R, \C\)-Vektorräumen}
+\subsection*{Euklidische, unitäre VR}
+
+\begin{karte}{Definition Biliearform}
+     Sei \(K\) ein Körper und \(V\) ein \(K\)-Vektorraum. Eine
+     Biliearform auf \(V\) ist eine bilieare Abbildung 
+     \(V \times V \rightarrow K\).\\
+     Eine Biliearform \(\abb{b}{V\times V}{K}\) heißt symmetrisch,
+     wenn
+     \[ b(x,y) = b(y,x) \]
+     für alle \(x, y \in V \) gilt.
+\end{karte}
+
+\begin{karte}{Definitheit von Biliearformen}
+     Eine Biliearform \(b\) auf einem reellen Vektorraum \(V\) heißt
+     \begin{description}
+         \item[positiv definit,] falls \(b(x,x) > 0 \; \forall x \in V \setminus \set{0}\)
+         \item[positiv semidefinit,] falls \(b(x,x) \geq 0 \; \forall x \in V\)
+         \item[negativ definit,] falls \(b(x,x) < 0 \; \forall x \in V \setminus \set{0}\)
+         \item[negativ semidefinit,] falls \(b(x,x) \leq 0 \; \forall x \in V\)
+         \item[indefinit,] falls es \(x, y \in V \setminus \set{0}\) mit
+         \(b(x,x) > 0\) und \(b(y,y) < 0\) gibt.  
+     \end{description}
+\end{karte}
+
+\begin{karte}{Definition Skalarprodukt}
+    Sei \(V\) ein \(\R\)-Vektorraum. Ein Skalarprodukt auf \(V\) ist eine
+    symmetrische, positiv definite Biliearform.\\
+    Eine positive definite hermitesche Sesquilinearform heißt hermitesches Skalarprodukt.
+\end{karte}
+
+\begin{karte}{Definition Sesquilinearform}
+    Sei \(V\) ein \(\C\)-Vektorraum. Eine Abbildung \(\abb{b}{V\times V}{\C}\)
+    heißt Sesquilinearform, wenn für jedes \(x\in V\) die Abbildung
+    \[ \abb{b(x, \cdot)}{V}{\C} \]
+    \(\C\)-Linear ist und die Abbildung
+    \[ \abb{b(\cdot, x)}{V}{\C} \]
+    \(\R\)-Linear ist und für jedes \(\lambda \in \C\) und \(y \in V\) gilt
+    \[ b(\lambda y, x) = \overline{\lambda} b(y,x) \]
+\end{karte}
+
+\begin{karte}{Definition konjugiert linear}
+    Eine rell lineare Abbildung \(\abb{f}{V}{W}\) zwischen komplexen Vektorräumen,
+    die \(f(\lambda v) = \overline{\lambda}f(v)\) für jedes \(\lambda \in \C\)
+    und \(v \in V\) erfüllt, heißt auch konjugiert linear.
+\end{karte}
+
+\begin{karte}{Definition hermitesche Sesquilinearform}
+    Sei \(\abb{b}{V\times V}{\C}\) eine Sesquilinearform. Dann heißt \(b\) hermitesch,
+    wenn für alle \(x,y \in V\)
+    \[ b(x,y) = \overline{b(y,x)} \]
+    gilt.\\
+    Eine hermitesche Sesquilinearform \(b\) auf \(V\) heißt positiv definit,
+    wenn \(b(x,x) > 0\) für alle \(x \in V \setminus \set{0}\)
+\end{karte}
+
+\begin{karte}{Definition adjungierte Matrix}
+    Für eine Matrix \(A \in M_{m,n}(\C)\) ist ihre adjungierte Matrix \(A^H \in M_{n,m}(\C)\)\\
+    diejenige Matrix, die man erhält, wenn man \(A\) transponiert und alle Matrixeinträge 
+    komplex konjugiert. Man bezeichnet \(A^H\) auch als das hermitesch Transponierte von \(A\).\\
+    Es gelten die Rechenregeln:\\
+    \[ \overline{A} + \overline{B} = \overline{A + B} \]
+    \[ \overline{A} \cdot \overline{B} = \overline{AB} \]
+    \[ A^H + B^H = (A + B)^H \]
+    \[ B^H \cdot A^H = (A \cdot B)^H \]
+\end{karte}
+
+\begin{karte}{Definition euklidischer und unitärer Vektorraum}
+    Ein euklidischer Vektorraum ist ein Paar bestehend aus einem reellen Vektorraum \(V\)
+    und einem Skalarprodukt auf \(V\).\\
+    Ein unitärer Vektorraum ist ein Paar bestehend aus einem komplexen Vektorraum \(V\) und
+    einem hermiteschen Skalarprodukt auf \(V\).
+\end{karte}
+
+\begin{karte}{Definition Norm}
+    Sei \(K\) der Körper der reellen oder komplexen Zahlen. Sei \(V\) ein \(K\)-Vektorraum.
+    Eine Norm auf \(V\) ist eine Abbildung
+    \[ \abb{\norm{\cdot}}{V}{[0, \infty)} \]
+    mit folgenden Eigenschaften:
+    \begin{description}
+        \item[Homogenität] Für alle \(\lambda \in K\) und \(v \in V\) ist 
+        \[ \norm{\lambda v} = \abs{\lambda} \norm{v}. \]
+        \item[Definitheit] Es ist \(\norm{v} = 0\) genau dann, wenn \(v = 0\).
+        \item[Dreiecksungleichung] Für alle \(v, w \in V\) ist
+        \[ \norm{v+w} \leq \norm{v} + \norm{w}. \]   
+    \end{description}
+\end{karte}
+
+\begin{karte}{Normierter Vektorraum}
+    Sei \(K \in \set{\R, \C}\). Ein normierter \(K\)-Vektorraum ist ein Paar bestehend
+    aus einem \(K\)-Vektorraum \(V\) und einer Norm auf \(V\).\\
+    Normierte Vektorräume sind gleichzeitig metrische Räume mit
+    \[ \abb{d}{V\times V}{[0, \infty)}, (x, y) \mapsto \norm{x-y}. \]
+\end{karte}
+
+\begin{karte}{Definition induzierte Norm}
+    Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer oder unitärer Vektorraum.
+    Dann definieren wir durch
+    \[ \abb{\norm{\cdot}}{V}{\R}, x \mapsto \sqrt{\scalarprod{x}{x}} \]
+    die von \(\scalarprod{\cdot}{\cdot}\) induzierte Norm auf \(V\).\\
+    \(\norm{\cdot}_2\) ist die von \(\scalarprod{\cdot}{\cdot}_2\) induzierte Norm und
+    wird als euklidische Norm bezeichnet.\\
+    Die Supremumsnorm ist definiert durch 
+    \[ \abb{\norm{\cdot}_\infty}{\R^n}{[0,\infty)}, x \mapsto \max\set{\abs{x_1}, \ldots, \abs{x_n}} \]
+\end{karte}
+
+\begin{karte}{Ungleichung von Cauchy-Schwarz}
+    Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer oder unitärer Vektorraum
+    und \(\norm{\cdot}\) die Norm. Dann gilt
+    \[ \abs{\scalarprod{x}{y}} \leq \norm{x} \cdot \norm{y}. \]
+    Gleichheit tritt genau dann ein, wenn \(x\) und \(y\) linear abhängig sind.
+\end{karte}
+
+\begin{karte}{Polarisierung}
+    Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer oder unitärer Vektorraum mit induzierter
+    Norm \(\norm{\cdot}\).
+    \begin{enumerate}
+        \item Im euklidischen Fall gilt für alle \(x, y \in V\)
+        \[ \scalarprod{x}{y} = \frac{1}{2}(\norm{x+y}^2-\norm{x}^2-\norm{y}^2). \]
+        \item Im unitären Fall gilt für alle \(x, y \in V\)
+        \[ \scalarprod{x}{y} = \frac{1}{4}(\norm{x+y}^2-\norm{x-y}^2) 
+        - \frac{i}{4}(\norm{x+iy}^2-\norm{x-iy}^2). \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Definition Winkel}
+    Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer Vektorraum mit induzierter Norm \(\norm{\cdot}\).
+    Seien \(x, y \in V \setminus \set{0}\). Dann ist der Winkel zwischen \(x\) und \(y\) definiert als
+    \[ \angle (x,y) := \arccos \frac{\scalarprod{x}{y}}{\norm{x} \norm{y}} \in [0, \pi]. \]
+\end{karte}
+
+\begin{karte}{Definition lineare isometrische Einbettung und lineare Isometrie}
+    Seien \((V, \norm{\cdot})\) und \((V', \norm{\cdot}')\) normierte Vektorräume über 
+    \(K \in \set{\R, \C}\).\\
+    Eine lineare isometrische Einbettung \((V, \norm{\cdot}) \rightarrow (V', \norm{\cdot}')\)
+    ist eine \(K\)-lineare Abbildung \(\abb{f}{V}{V'}\) mit
+    \[ \norm{f(x)}' = \norm{x} \; \forall x \in V. \]
+    Eine lineare Isometrie \((V, \norm{\cdot}) \rightarrow (V', \norm{\cdot}')\) ist eine
+    bijektive lineare isometrische Einbettung \((V, \norm{\cdot}) \rightarrow (V', \norm{\cdot}')\).\\
+    Lineare Isometrien sind winkeltreu, d. h. für alle \(x, y \in V \setminus \set{0}\) gilt
+    \[ \angle (f(x), f(y)) = \angle (x,y) \]
+\end{karte}
+
+\begin{karte}{Definition orthogonale Matrix}
+    Eine Matrix \(A \in \GL_n(\R)\) heißt orthogonal, falls
+    \[ A^{-1} = A^T. \]
+    Eine Matrix \(A \in \GL_n(\C)\) heißt unitär, alls
+    \[A^{-1} = A^H.\]
+\end{karte}
+
+\begin{karte}{Wichtige Untergruppen von \(\GL_n\)}
+    Die folgenden Teilmengen von \(\GL_n(\R)\) bzw. \(\GL_n(\C)\) sind Untergruppen:
+    \begin{align*}
+        O(n) &:= \set{A \in \GL_n(\R) \vert A \text{ orthogonal}} &\text{orthogonale Gruppe}\\
+        U(n) &:= \set{A \in \GL_n(\R) \vert A \text{ unitär}} &\text{unitärer Gruppe}\\
+        SO(n) &:= \set{A \in O(n) \vert \det A = 1} &\text{spezielle orthogonale Gruppe}\\
+        SU(n) &:= \set{A \in U(n) \vert \det A = 1} &\text{spezielle unitäre Gruppe}
+    \end{align*}
+\end{karte}
+
+\begin{karte}{Eigenschaften lineare Isometrie}
+    Sei \(B = (v_1, \ldots, v_n)\) eine Orthonormalbasis des euklidischen oder unitären 
+    Vektorraums \(V\). Sei \(\abb{f}{V}{V}\) ein Endomorphismus.
+    \begin{enumerate}
+        \item Es ist \(f\) eine lineare Isometrie genau dann, wenn \((f(v_1), \ldots, f(v_n))\)
+        eine Orthonormalbasis ist.
+        \item Es ist \(f\) eine lineare Isometrie genau dann, wenn \(M_{B,B}(f)\) orthogonal 
+        bzw. unitär ist.
+    \end{enumerate}
+\end{karte}
+
+\end{document}
