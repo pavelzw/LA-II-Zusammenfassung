@@ -9,22 +9,31 @@
      Sei \(K\) ein Körper und \(V\) ein \(K\)-Vektorraum. Eine
      Bilinearform auf \(V\) ist eine bilineare Abbildung 
      \(V \times V \rightarrow K\).\\
-     Eine Bilinearform \(\abb{b}{V\times V}{K}\) heißt symmetrisch,
-     wenn
-     \[ b(x,y) = b(y,x) \]
-     für alle \(x, y \in V \) gilt.
+\end{karte}
+
+\begin{karte}{Symmetrische Bilinearform}
+    Eine Bilinearform \(\abb{b}{V\times V}{K}\) heißt symmetrisch,
+    wenn
+    \[ b(x,y) = b(y,x) \]
+    für alle \(x, y \in V \) gilt. Eine Matrix heißt symmetrisch, 
+    falls \(A^T = A\).\\
+    \( b \) ist genau dann symmetrisch, wenn \( M_C(b) \) 
+    symmetrisch ist.
 \end{karte}
 
 \begin{karte}{Definitheit von Bilinearformen}
-     Eine Bilinearform \(b\) auf einem reellen Vektorraum \(V\) heißt
-     \begin{description}
-         \item[positiv definit,] falls \(b(x,x) > 0 \; \forall x \in V \setminus \set{0}\)
-         \item[positiv semidefinit,] falls \(b(x,x) \geq 0 \; \forall x \in V\)
-         \item[negativ definit,] falls \(b(x,x) < 0 \; \forall x \in V \setminus \set{0}\)
-         \item[negativ semidefinit,] falls \(b(x,x) \leq 0 \; \forall x \in V\)
-         \item[indefinit,] falls es \(x, y \in V \setminus \set{0}\) mit
-         \(b(x,x) > 0\) und \(b(y,y) < 0\) gibt.  
-     \end{description}
+    Eine Bilinearform \(b\) auf einem reellen Vektorraum \(V\) heißt
+    \begin{description}
+        \item[positiv definit,] falls \(b(x,x) > 0 \; \forall x \in V \setminus \set{0}\)
+        \item[positiv semidefinit,] falls \(b(x,x) \geq 0 \; \forall x \in V\)
+        \item[negativ definit,] falls \(b(x,x) < 0 \; \forall x \in V \setminus \set{0}\)
+        \item[negativ semidefinit,] falls \(b(x,x) \leq 0 \; \forall x \in V\)
+        \item[indefinit,] falls es \(x, y \in V \setminus \set{0}\) mit
+        \(b(x,x) > 0\) und \(b(y,y) < 0\) gibt.  
+    \end{description}
+    Eine Matrix \(A\) heißt positiv definit, wenn
+    die Bilinearform \( b(A) \) auf \(\R^n\) 
+    positiv definit ist.
 \end{karte}
 
 \begin{karte}{Definition Skalarprodukt}
@@ -40,7 +49,7 @@
     \(\C\)-linear ist und die Abbildung
     \[ \abb{b(\cdot, x)}{V}{\C} \]
     \(\R\)-linear ist und für jedes \(\lambda \in \C\) und \(y \in V\) gilt
-    \[ b(\lambda y, x) = \overline{\lambda} b(y,x) \]
+    \[ b(\lambda y, x) = \overline{\lambda} b(y,x). \]
 \end{karte}
 
 \begin{karte}{Definition konjugiert linear}
@@ -176,6 +185,152 @@
         \item Es ist \(f\) eine lineare Isometrie genau dann, wenn \(M_{B,B}(f)\) orthogonal 
         bzw. unitär ist.
     \end{enumerate}
+\end{karte}
+
+\subsection*{Matrizenkalkül von Bilinearformen}
+
+\begin{karte}{Bilinearformen Vektorraum}
+    \( \Bil_K(V) \) ist die Menge der 
+    Bilinearformen auf \( V \). \\
+    Sie bildet einen \( K \)-Vektorraum.\\
+    Sei \( V \) ein \(n\)-dimensionaler \(K\)-Vektorraum 
+    und \( C=(c_1, \ldots, c_n) \) eine Basis von \(V\).
+    Dann sind  
+    \[ \abb{\phi}{\Bil_K(V)}{M_n(K)}, b\mapsto M_C(b) := (b(c_j, c_k))_{j,k\in\set{1,\ldots,n}} \]
+    \[ \abb{\psi}{M_n(K)}{\Bil_K(V)}, A \mapsto b_C(A) \]
+    zueinander inverse Isomorphismen.
+\end{karte}
+
+\begin{karte}{Basiswechsel Bilinearformen}
+    Sei \(V\) ein \(n\)-dimensionaler \(K\)-Vektorraum. 
+    Sei \( b\in \Bil_k(V) \). Sei \(C\) eine Basis 
+    von \(V\) und \(A\in M_n(K)\). Dann sind 
+    äquivalent:
+    \begin{enumerate}
+        \item Es gibt eine Matrix \(S\in \GL_n(K)\) mit 
+        \[ A=S^T \cdot M_C(b) \cdot S. \]
+        \item Es gibt eine Basis \( D \) von \(V\) mit
+        \(A=M_D(b)\).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Sesquilinearformen Vektorraum}
+    \( \Sil_\C(V) \) ist die Menge der 
+    Sesquilinearformen auf \( V \). \\
+    Sie bildet einen \( \C \)-Vektorraum.\\
+    Sei \( V \) ein \(n\)-dimensionaler \(\C\)-Vektorraum 
+    und \( C=(c_1, \ldots, c_n) \) eine Basis von \(V\).
+    Dann sind  
+    \[ \abb{\phi}{\Sil_\C(V)}{M_n(\C)}, 
+    b\mapsto M_C(b) := (b(c_j, c_k))_{j,k\in\set{1,\ldots,n}} \]
+    \[ \abb{\psi}{M_n(\C)}{\Sil_\C(V)}, A \mapsto b^\C_C(A) \]
+    zueinander inverse Isomorphismen.
+\end{karte}
+
+\begin{karte}{Basiswechsel Sesquilinearform}
+    Sei \(V\) ein \(n\)-dimensionaler \(\C\)-Vektorraum. 
+    Sei \(b \in \Sil_\C(V)\). Sei \(C\) eine Basis von 
+    \(V\) und \(A\in M_n(\C)\). Dann sind äquivalent:
+    \begin{enumerate}
+        \item Es gibt eine Matrix \( S \in \GL_n(\C) \) mit 
+        \[ A=S^H \cdot M_C(b) \cdot S. \]
+        \item Es gibt eine Basis \(D\) von \( V \) 
+        mit \( A=M_D(b) \).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Hermitesch}
+    Eine Matrix \(A\in M_n(\C)\) ist \textit{hermitesch} 
+    oder \textit{selbstadjungiert}, wenn \(A^H=A\).\\
+    Eine Sesquilinearform \( b \) ist genau dann 
+    hermitesch, wenn \(M_C(b)\) hermitesch ist.
+\end{karte}
+
+\subsection*{Orthogonalität}
+
+\begin{karte}{Orthogonal}
+    Sei \( (V, \scalarprod{\cdot}{\cdot}) \) ein 
+    euklidischer oder unitärer Vektorraum. 
+    \begin{itemize}
+        \item Zwei Vektoren \(v,w\in V\) heißen 
+        \textit{orthogonal}, falls 
+        \( \scalarprod{v}{w} = 0 \). In diesem Fall 
+        schreiben wir auch \(v\bot w\).
+        \item \( A, B \subset V \) heißen \textit{orthogonal}, 
+        wenn für \( v\in A, w\in B \) stets \(v\bot w\) gilt.
+        Schreiben \(A\bot B\).
+        \item Ist \( A\subset V \), so nennen wir 
+        \[ A^\bot := \set{ v\in V \;\vert\; v\bot w \text{ für alle } w\in A } \]
+        das \textit{orthogonale Komplement} von \(A\). Das orthonale 
+        Komplement ist ein Untervektorraum. \( U^\bot \) ist 
+        komplementär zu \(U\).
+    \end{itemize}
+\end{karte}
+
+\begin{karte}{Orthonormalsystem, Orthonormalbasis}
+    Sei \( (V, \scalarprod{\cdot}{\cdot}) \) ein 
+    euklidischer oder unitärer Vektorraum. 
+    \begin{enumerate}
+        \item Eine Familie \( (v_i)_{i\in I} \) 
+        von Vektoren in \(V\) ist ein 
+        \textit{Orthonormalsystem}, wenn für alle 
+        \( i,j \in I \) gilt.
+        \[ \scalarprod{v_i}{v_j} = \delta_{i,j}. \]
+        \item Eine Orthonormalbasis von 
+        \( (V, \scalarprod{\cdot}{\cdot}) \) ist 
+        eine Basis von \(V\), die ein Orthonormalsystem ist.
+    \end{enumerate}
+    Jedes Orthonormalsystem ist linear unabhängig.\\
+    Jeder endlich-dimensionale euklidische oder 
+    unitäre Vektorraum besitzt eine Orthonormalbasis.
+\end{karte}
+
+\begin{karte}{Orthonormalisierungsverfahren von Gram-Schmidt}
+   Sei \( (V, \scalarprod{\cdot}{\cdot}) \) ein 
+   euklidischer oder unitärer Vektorraum. Es sei 
+   \( (v_1,\ldots, v_n) \) eine linear unabhängiges 
+   \(n\)-Tupel in \(V\). Dann gibt es ein 
+   Orthonormalsystem \( (w_1, \ldots, w_n) \) in \(V\) 
+   mit 
+   \[ \langle \set{w_1, \ldots, w_k} \rangle 
+   = \langle \set{ v_1, \ldots, v_k } \rangle \quad 
+   \forall k \in \set{1,\ldots, n}. \]
+   Weiter gilt: Das \(n\)-Tupel 
+   \( (w_1, \ldots, w_n) \), das rekursiv durch 
+   \[ w_1 := \frac{1}{\norm{\tilde{w}_1}} \cdot \tilde{w}_1 
+   \text{ und } \tilde{w}_1 := v_1 \]
+   und 
+   \[ w_{k+1} := \frac{1}{\norm{ \tilde{w}_{k+1} }} 
+   \cdot \tilde{w}_{k+1} \text{ und } 
+   \tilde{w}_{k+1} := 
+   v_{k+1} - \sum_{j=1}^k \scalarprod{w_j}{v_{k+1}} \cdot w_j \]
+   für \( k\in \set{1, \ldots, n-1} \) definiert ist, hat 
+   diese Eigenschaft.
+\end{karte}
+
+\begin{karte}{Isometrie zwischen Vektorräumen}
+    Sei \( (V, \scalarprod{\cdot}{\cdot}) \) ein 
+    endlich-dimensionaler euklidischer oder 
+    unitärer Vektorraum mit Grundkörper 
+    \( K\in \set{\R, \C} \). Dann gibt es eine lineare 
+    Isometrie zwischen \( (K^n, \scalarprod{\cdot}{\cdot}_2) \)
+    und \( (V, \scalarprod{\cdot}{\cdot}) \).
+\end{karte}
+
+\begin{karte}{Orthogonale Projektion}
+    Sei \( (V,\scalarprod{\cdot}{\cdot}) \) ein 
+    euklidischer oder unitärer Vektorraum und 
+    sei \( U \subset V \) ein endlich-dimensionaler 
+    Untervektorraum. Dann gibt es genau eine lineare 
+    Abbildung \( \abb{p_U}{V}{V} \) mit folgenden 
+    Eigenschaften:
+    \begin{enumerate}
+        \item Es gilt \(\Bild(p_U) \subset U\).
+        \item Es gilt \( \Bild(p_U - \id_V)\subset U^\bot \).
+    \end{enumerate}
+    Weiter ist \( p_U(x) = x \) für \( x\in U \). Man 
+    bezeichnet \( p_U \) als \textit{orthogonale Projektion} 
+    von \(V\) auf \(U\).
 \end{karte}
 
 \end{document}
