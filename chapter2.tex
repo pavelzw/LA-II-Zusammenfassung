@@ -6,9 +6,9 @@
 \subsection*{Euklidische, unitäre VR}
 
 \begin{karte}{Definition Bilinearform}
-     Sei \(K\) ein Körper und \(V\) ein \(K\)-Vektorraum. Eine
-     Bilinearform auf \(V\) ist eine bilineare Abbildung 
-     \(V \times V \rightarrow K\).\\
+    Sei \(K\) ein Körper und \(V\) ein \(K\)-Vektorraum. 
+    Eine Bilinearform auf \(V\) ist eine bilineare Abbildung 
+    \(V \times V \rightarrow K\).\\
 \end{karte}
 
 \begin{karte}{Symmetrische Bilinearform}
@@ -169,10 +169,10 @@
 \begin{karte}{Wichtige Untergruppen von \(\GL_n\)}
     Die folgenden Teilmengen von \(\GL_n(\R)\) bzw. \(\GL_n(\C)\) sind Untergruppen:
     \begin{align*}
-        O(n) &:= \set{A \in \GL_n(\R) \vert A \text{ orthogonal}} &\text{orthogonale Gruppe}\\
-        U(n) &:= \set{A \in \GL_n(\R) \vert A \text{ unitär}} &\text{unitärer Gruppe}\\
-        SO(n) &:= \set{A \in O(n) \vert \det A = 1} &\text{spezielle orthogonale Gruppe}\\
-        SU(n) &:= \set{A \in U(n) \vert \det A = 1} &\text{spezielle unitäre Gruppe}
+        \mathrm{O}(n) &:= \set{A \in \GL_n(\R) \vert A \text{ orthogonal}} &\text{orthogonale Gruppe}\\
+        \mathrm{U}(n) &:= \set{A \in \GL_n(\R) \vert A \text{ unitär}} &\text{unitärer Gruppe}\\
+        \mathrm{SO}(n) &:= \set{A \in \mathrm{O}(n) \vert \det A = 1} &\text{spezielle orthogonale Gruppe}\\
+        \mathrm{SU}(n) &:= \set{A \in \mathrm{U}(n) \vert \det A = 1} &\text{spezielle unitäre Gruppe}
     \end{align*}
 \end{karte}
 
@@ -331,6 +331,152 @@
     Weiter ist \( p_U(x) = x \) für \( x\in U \). Man 
     bezeichnet \( p_U \) als \textit{orthogonale Projektion} 
     von \(V\) auf \(U\).
+\end{karte}
+
+\subsection*{Selbstadjungierte Endomorphismen}
+
+\begin{karte}{Selbstadjungiert}
+    Ein Endomorphismus \( \abb{f}{V}{V} \) heißt 
+    \textit{selbstadjungiert}, wenn für alle 
+    \( x,y\in V \) gilt:
+    \[ \scalarprod{x}{f(y)} = \scalarprod{f(x)}{y}. \]
+    Eine komplexe Matrix ist selbstadjungiert, wenn 
+    \( A^H = A \) und wenn alle Matrixeinträge reell 
+    sind, ist sie selbstadjungiert, wenn \(A^T = A\).
+    \( M_{B,B}(f) \) ist genau dann selbstadjungiert, 
+    wenn \(f\) selbstadjungiert ist.
+\end{karte}
+
+\begin{karte}{Adjungierte Abbildung}
+    Sei \( \abb{f}{V}{V} \) ein Endomorphismus 
+    eines endlich-dimensionalen euklidischen oder unitären 
+    Vektorraums. Dann gibt es genau einen Endomorphismus 
+    \( \abb{f^H}{V}{V} \) so, dass 
+    \[ \scalarprod{x}{f(y)} = \scalarprod{f^H(x)}{y} \] 
+    für alle \( x,y\in V \) gilt. \\
+    Man bezeichnet \(f^H\) als adjungierte Abbildung 
+    von \(f\).\\
+    Ein Endomorphismus \(f\) ist genau dann selbstadjungiert, 
+    wenn \(f^H = f\).
+    Es gilt außerdem 
+    \[ M_{B,B}(f^H) = M_{B, B}(f)^H. \]
+\end{karte}
+
+\begin{karte}{Rechenregeln adjungierte Abbildung}
+    Seien \(\abb{f,g}{V}{V}\) Endomorphismen eines 
+    endlich-dimensionalen euklidischen oder unitären 
+    Vektorraums. Seien \( \lambda, \mu\in \C \). Dann 
+    gilt 
+    \begin{enumerate}
+        \item \( (\lambda \cdot f + \mu \cdot g)^H 
+        = \overline{\lambda} \cdot f^H + \overline{\mu} \cdot g^H \).
+        \item \( (f^H)^H =f \).
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Spektralsatz für selbstadjungierte Endomorphismen}
+    Sei \( \abb{f}{V}{V} \) ein selbstadjungierte Endomorphismus 
+    eines \\
+    endlich-dimensionalen euklidischen oder unitären 
+    Vektorraums. Es bezeichne \( K\in \set{\R, \C} \) 
+    den Grundkörper von \(V\). Dann gilt 
+    \begin{enumerate}
+        \item \( \spec_K(f) \subset \R \).
+        \item Es gibt eine Orthonormalbasis von \(V\) 
+        aus Eigenvektoren von \(f\). Insbesondere ist 
+        \(f\) diagonalisierbar.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Diagonalisierung symmetrischer Matrizen}
+    Ist die Matrix \( A\in M_n(\R) \) symmetrisch, 
+    so gibt es ein \( S\in \mathrm{O}(n) \) so, dass 
+    \[ S^T \cdot A \cdot S = S^{-1} \cdot A\cdot S 
+    = \begin{pmatrix}
+        \lambda_1 && 0 \\
+        & \ddots & \\
+        0 && \lambda_n
+    \end{pmatrix} \]
+    eine Diagonalmatrix mit reellen Einträgen ist.
+\end{karte}
+
+\begin{karte}{Diagonalisierung hermitescher Matrizen}
+    Ist die Matrix \( A\in M_n(\C) \) hermitesch, so gibt es 
+    ein \( S\in \mathrm{U}(n) \) hermitesch so, dass 
+    \[ S^H \cdot A \cdot S = S^{-1} \cdot A \cdot S 
+    = \begin{pmatrix}
+        \lambda_1 && 0 \\
+        & \ddots & \\
+        0 && \lambda_n
+    \end{pmatrix} \]
+    eine Diagonalmatrix mit reellen Einträgen ist.
+\end{karte}
+
+\begin{karte}{Normale Endomorphismen}
+    Wir nennen einen Endomorphismus 
+    \( f \) eines euklidischen oder unitären 
+    Vektorraums endlicher Dimension \textit{normal}, 
+    wenn 
+    \[ f^H \circ f = f \circ f^H. \]
+    Ist \( f \) normal, dann auch \( \mu \cdot f \) 
+    und \( f + \mu \cdot \id_V \). 
+\end{karte}
+
+\begin{karte}{Spektralsatz für normale Endomorphismen}
+    Sei \( f \) ein Endomorphismus eines endlich-dimensionalen 
+    euklidischen oder \\
+    unitären Vektorraums, dessen 
+    charakterisches Polynom in Linearfaktoren \\
+    zerfällt. 
+    Dann gibt es genau dann eine Orthonormalbasis aus 
+    Eigenvektoren von \(f\), wenn \(f\) normal ist.
+\end{karte}
+
+\begin{karte}{Eigenschaften normale Endomorphismen}
+    Sei \(\abb{f}{V}{V}\) normal. Dann gilt: 
+    \begin{enumerate}
+        \item \( \ker f = \ker f^H \).
+        \item Ein Vektor \(v\in V\) ist genau dann ein 
+        Eigenvektor von \(f\) zum Eigenwert \(\lambda\), 
+        wenn \(v\) ein Eigenvektor von \( f^H \) zum 
+        Eigenwert \( \overline{\lambda} \) ist.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Definitheit symmetrischer Matrizen}
+    Sei \( A\in M_n(\R) \) symmetrisch. Dann ist \(A\)
+    \begin{itemize}
+        \item genau dann positiv definit, 
+        wenn \( \spec_\R(A) \subset (0,\infty) \).
+        \item genau dann positiv semidefinit, 
+        wenn \( \spec_\R(A) \subset [0,\infty) \).
+        \item genau dann negativ definit, 
+        wenn \( \spec_\R(A) \subset (-\infty, 0) \).
+        \item genau dann negativ semidefinit, 
+        wenn \( \spec_\R(A) \subset (-\infty, 0] \).
+        \item genau dann indefinit, wenn 
+        \( \spec_\R(A) \) negative und positive Zahlen 
+        enthält.
+    \end{itemize}
+\end{karte}
+
+\begin{karte}{\(k\)-ter Hauptminor}
+    Sei \(A = (a_{i,j}) \in M_n(K)\) eine 
+    quadratische Matrix über einem beliebigen Körper. 
+    Sei \( 1 \leq k\leq n \). Die Determinante der 
+    linken oberen \( k\times k \)-Teilmatrix 
+    \( (a_{i,j})_{1\leq i,j \leq k} \) heißt 
+    \textit{\(k\)-ter Hauptminor} von \(A\).
+\end{karte}
+
+\begin{karte}{Hurwitz-Kriterium}
+    Eine reelle symmetrische Matrix \(A\) ist genau dann 
+    positiv definit, wenn alle ihre Hauptminoren 
+    positiv sind.\\
+    \(A\) ist genau dann negativ definit, wenn 
+    \(-A\) positiv definit ist oder 
+    wenn die Hauptminoren alternierend positiv und 
+    negativ sind (startend mit negativ).
 \end{karte}
 
 \end{document}
