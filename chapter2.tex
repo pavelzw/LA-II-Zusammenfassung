@@ -479,4 +479,341 @@
     negativ sind (startend mit negativ).
 \end{karte}
 
+\subsection*{Isometrien}
+
+\begin{karte}{Eigenschaften von linearen Isometrien}
+    Eine lineare Isometrie \( \abb{f}{V}{V} \)
+    ist normal. Es gilt \( f^H = f^{-1} \).\\
+    Sei \( K\in \set{\R, \C} \) der jeweilige 
+    Grundkörper. Dann gilt
+    \begin{enumerate}
+        \item \( \spec_K(f) \subset \set{ x\in K \;\vert\; 
+        \abs{x} = 1 } \).
+        \item Sind \(\lambda, \mu\in\spec_K(f)\) 
+        unterschiedliche Eigenwerte, dann ist 
+        \[ E_\lambda(f) \bot E_\mu(f). \]
+    \end{enumerate}
+    Eine lineare Isometrie \(f\) eines unitären 
+    Vektorraums \(V\) besitzt eine Orthonormalbasis 
+    aus Eigenvektoren. Die Eigenwerte von \(f\) 
+    haben die Norm \(1\).
+\end{karte}
+
+\begin{karte}{Diagonalisierung von Matrizen aus \(\mathrm{U}(n)\)}
+    Ist \(A\in \mathrm{U}(n)\) eine unitäre Matrix, 
+    so gibt es eine Matrix \( S \in \mathrm{U}(n) \) 
+    und komplexe Zahlen \( \lambda_1, \ldots, \lambda_n \) 
+    von Norm \(1\) so, dass 
+    \[ S^H \cdot A \cdot S = S^{-1} \cdot A \cdot S 
+    = \begin{pmatrix}
+        \lambda_1 && 0 \\
+        & \ddots & \\
+        0 && \lambda_n
+    \end{pmatrix}. \]
+\end{karte}
+
+\begin{karte}{Euklidische Normalform}
+    Es sei \( \abb{f}{V}{V} \) eine lineare 
+    Isometrie des euklidischen Vektorraums \(V\). 
+    Dann besitzt \(V\) eine Orthonormalbasis \(B\)
+    und es gibt Zahlen \(p, q, k \in \N_0\) und 
+    Winkel \( \phi_1,\ldots, \phi_k \in (0,2\pi)
+    \setminus \set{\pi} \) derart, dass 
+    \[ M_{B,B}(f) = I_p \boxplus -I_q 
+    \boxplus R_(\phi_1) \boxplus \cdots \boxplus R(\phi_k). \]
+    Dabei bezeichnet 
+    \[ R(\phi) = \begin{pmatrix}
+        \cos \phi & -\sin \phi \\
+        \sin \phi & \cos \phi
+    \end{pmatrix} \]
+    die Matrix der Drehung um den Winkel \( \phi \).
+\end{karte}
+
+\begin{karte}{Lineare Unabhängigkeit über \(\C\)}
+    Vektoren \( x_1\ldots, x_k \in \R^n \) sind 
+    genau dann über \( \R \) linear unabhängig, 
+    wenn sie über \(\C\) linear unabhängig sind 
+    (als Vektoren in \( \R^n \subset \C^n \)).
+\end{karte}
+
+\begin{karte}{Basenunabhängigkeit in \(\R\) und \(\C\)}
+    Eine \(\R\)-Basis von \( \ker L(A) \subset \R^n \) 
+    ist zugleich eine \( \C \)-Basis von \( \ker L_\C (A)\subset \C^n \).
+\end{karte}
+
+\begin{karte}{Ent-Diagonalisierung der Rotationsmatrix}
+    Sei \(A \in \mathrm{O}(n)\). Zu jedem Paar von 
+    Eigenvektoren \( z,\overline{z} \) von \( L_\C(A) \), 
+    zu nicht-reellen Eigenwerten \( \mu, \overline{\mu} \), 
+    wobei 
+    \[ \mu = \cos \alpha + i \cdot \sin \alpha, \]
+    existiert ein \(2\)-dimensionaler \( L(A) \)-invarianter 
+    \( \R \)-Untervektorraum \( W_z \subset \R^n \) und 
+    eine ON-Basis \( B_z = (x_z, y_z) \) von \( W_z \) 
+    so, dass 
+    \[ \langle W_z \rangle_\C = \langle z, \overline{z}\rangle_\C \subset \C^n \]
+    \[ M_{B_z,B_z}(L(A)\vert_{W_z}) = R(\alpha)
+    = \begin{pmatrix}
+        \cos \alpha & -\sin \alpha \\
+        \sin \alpha & \cos \alpha
+    \end{pmatrix}. \]
+\end{karte}
+
+\begin{karte}{Spiegelung}
+    Sei \( v\in V\setminus \set{0} \). Die 
+    \textit{Spiegelung an der zu \(v\) orthogonalen Hyperebene} 
+    ist die lineare Abbildung 
+    \[ \abb{\sigma}{V}{V} \]
+    \[ \sigma_v(x) := x - 2\frac{\scalarprod{x}{v}}{\scalarprod{v}{v}} \cdot v. \]
+\end{karte}
+
+\begin{karte}{Spiegelung zwischen zwei Vektoren}
+    Seien \(v,w\) zwei verschiedene Vektoren 
+    gleicher Länge \( \norm{v} = \norm{w} \). Sei 
+    \( d = v-w \). Dann ist \( \sigma_d(w) = v \).
+\end{karte}
+
+\begin{karte}{Isometrien als Komposition von Spiegelungen}
+    Jede lineare Isometrie eines \(n\)-dimensionalen 
+    euklidischen Vektorraums ist eine Komposition von 
+    höchstens \(n\) Spiegelungen.
+\end{karte}
+
+\begin{karte}{Eigenschaften spezielle Orthogonale Gruppe}
+    \begin{enumerate}
+        \item Es gilt \( \mathrm{SO}(2) = \set{R(\phi) \;\vert\; 
+        \phi \in [0,2\pi)} \). D. h. \( \mathrm{SO}(2) \) ist 
+        die Gruppe der Rotationen in \( \R^2 \) um den Ursprung.
+        \item Das Komplement \( \mathrm{O}(2) \setminus 
+        \mathrm{SO}(2) \) besteht genau aus den Spiegelungen 
+        von \(\R^2\).
+        \item Für alle \( n\in\N \) gilt 
+        \item \[ \mathrm{O}(n) = \mathrm{SO}(n) \cup 
+        \set{S\cdot A \;\vert\; A \in \mathrm{SO}(n)}, \] 
+        wobei \(S\) die Spiegelungsmatrix ist: 
+        \[ S = \begin{pmatrix}
+            -1 & 0 &\cdots & 0 \\
+            0 & 1 && \vdots \\
+            \vdots && \ddots & 0 \\
+            0 & \cdots & 0 & 1
+        \end{pmatrix} \in \mathrm{O}(n) \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{\( \mathrm{SO}(3) \)}
+    Die Gruppe \( \mathrm{SO}(3) \) besteht aus 
+    Drehungen um Geraden durch den Ursprung. \\
+    Genauer: Ist \(A \in \mathrm{SO}(3)\), so gibt 
+    es \( B\in \mathrm{O}(3) \) und 
+    \( \phi \in [0,2\pi) \) mit 
+    \[ B^{-1} \cdot A \cdot B = 
+    \begin{pmatrix}
+        1 & 0 \\ 0 & R(\phi)
+    \end{pmatrix} \in \mathrm{SO}(3). \]
+\end{karte}
+
+\begin{karte}{\( \mathrm{SO}(n) \) wegzusammenhängend}
+    Der topologische Raum \( \mathrm{SO}(n) \) ist 
+    wegzusammenhängend. D. h. für \( A,B\in \mathrm{SO}(n) \) 
+    gibt es einen stetigen Weg \( \abb{\gamma}{[0,1]}{\mathrm{SO}(n)} \)
+    mit \( \gamma(0) = A \) und \( \gamma(1) = B \).
+\end{karte}
+
+\begin{karte}{Gleich orientierte Basen}
+    Zwei ON-Basen des \(\R^n\) sind \textit{gleich orientiert}, 
+    wenn sie durch einen stetigen Weg auseinander hervorgehen.\\
+    Zwei ON-Basen sind gleich orientiert, wenn die 
+    Determinanten der zugehörigen Matrizen in \( \mathrm{O}(n) \) 
+    das gleiche Vorzeichen haben.
+\end{karte}
+
+\begin{karte}{Affine Abbildung}
+    Eine Abbildung \( \abb{f}{V}{W} \) zwischen Vektorräumen 
+    heißt \textit{affin}, wenn es eine lineare Abbildung 
+    \( \abb{g}{V}{W} \) und einen Vektor \( b \in W \) mit 
+    \[ f(x) = g(x) + b \text{ für alle }x\in V \]
+    gibt. D. h. eine affine Abbildung ist die Komposition 
+    einer linearen Abbildung mit einer Translation.\\
+    Weiter ist \(f\) ein \textit{affiner Isomorphismus} 
+    oder eine \textit{Affinität}, wenn \(f\) eine affine 
+    Umkehrabbildung besitzt.
+\end{karte}
+
+\begin{karte}{Isometrie zwischen metrischen Räumen}
+    Eine bijektive Abbildung \( \abb{f}{X}{Y} \) 
+    zwischen metrischen Räumen \( (X, d_X) \) und 
+    \( (Y, d_Y) \) heißt \textit{Isometrie}, wenn 
+    \[ d_Y(f(x), f(x')) = d_X(x,x') \] 
+    für alle \( x,x' \in X \) erfüllt ist.
+\end{karte}
+
+\begin{karte}{Kongruenz}
+    Eine Abbildung zwischen euklidischen 
+    Vektorräumen ist eine \textit{Kongruenz}
+    oder \textit{affine Isometrie}, wenn es \(f\) 
+    zugleich affin und Isometrie ist.\\
+    Jede Isometrie eines euklidischen Vektorraums ist 
+    eine affine Isometrie.
+\end{karte}
+
+\subsection*{Quadratische Formen}
+
+\begin{karte}{Quadratische Form}
+    Eine \textit{quadratische Form} auf einem 
+    \(K\)-Vektorraum ist eine Abbildung 
+    \[ \abb{q}{V}{K} \] 
+    mit den folgenden beiden Eigenschaften 
+    \begin{enumerate}
+        \item \( q(\lambda v) = \lambda^2 q(v) \) für alle 
+        \( \lambda \in K \) und \(v\in V\).
+        \item Die Abbildung \( \abb{f}{V\times V}{K} \) 
+        definiert eine Bilinearform durch 
+        \[ f(v,w) = q(v+w) -q(v) -q(w). \]
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Bijektion zwischen quadratischen Formen und symmetrischen Bilinearformen}
+    Sei \(K\) ein Körper mit \( 1_K + 1_K \neq 0_K \). Sei 
+    \(V\) ein \( K \)-Vektorraum. Dann sind die folgenden 
+    Konstruktionen zueinander inverse Bijektionen zwischen 
+    symmetrischen Bilinearformen und quadratischen Formen 
+    auf \(V\):
+    \begin{enumerate}
+        \item Einer symmetrischen Bilinearform 
+        \( \abb{b}{V\times V}{K} \) ordnen wir 
+        die quadratische Form 
+        \[ q(v) = b(v,v) \]
+        für alle \( v\in V \) zu.
+        \item Einer quadratischen Form \( \abb{q}{V}{K} \) 
+        ordnen wir die symmetrische Bilinearform 
+        \[ f(v,w) = \frac{1}{2} (q(v+w) - q(v) - q(w)) \] 
+        für alle \(v,w\in V\) zu.
+    \end{enumerate}
+\end{karte}
+
+\begin{karte}{Quadratischer Raum}
+    Einen \(K\)-Vektorraum \(V\) mit einer quadratischen 
+    Form nennt man einen \textit{quadratischen Raum} 
+    über \(K\).
+\end{karte}
+
+\begin{karte}{Isometrie quadratischer Räume}
+    Eine Isometrie quadratischer Räume 
+    \((V,q)\) und \((V',q')\) ist eine bijektive 
+    lineare Abbildung \( \abb{f}{V}{V'} \) so, 
+    dass 
+    \begin{center}
+        \begin{tikzcd}
+            V \arrow{r}{f} \arrow{d}{q} & V' \arrow{d}{q'} \\
+            K \arrow{r}{\id} & K
+        \end{tikzcd}
+    \end{center}
+    kommutiert. Existiert eine Isometrie, 
+    schreiben wir \( (V,q) \cong (V',q') \).
+\end{karte}
+
+\begin{karte}{Kongruente Matrizen}
+    Zwei Matrizen \( A,B\in M_n(K) \) sind 
+    \textit{kongruent}, wenn es ein \( S\in \GL_(K) \) 
+    gibt mit 
+    \[ S^T \cdot A \cdot S = B. \]
+\end{karte}
+
+\begin{karte}{Abbildung zwischen Isometrieklassen und Kongruenzklassen}
+    Die Abbildung 
+    \begin{center}
+        \begin{tikzcd}
+            \set{ \text{Isometrieklassen \(n\)-dimensionaler quadratischer Räume über \(K\)} } \arrow{d} \\
+            \set{ \text{Kongruenzklassen symmetrischer Matrizen in \(M_n(K)\)} },
+        \end{tikzcd}
+    \end{center}
+    die \( [(V,b)] \) die Kongruenzklasse \( [M_B(b)] \) 
+    der Matrixdarstellung der symmetrischen Bilinearform \(b\) 
+    bezüglich irgendeiner Basis \(B\) von \(V\) zuordnet, 
+    ist bijektiv.
+\end{karte}
+
+\begin{karte}{Abbildung zwischen Isomorphieklassen und Ähnlichkeitsklassen}
+    Die Abbildung 
+    \begin{center}
+        \begin{tikzcd}
+            \set{ \text{Isomorphieklassen \(n\)-dimensionaler Endoräume über \(K\)} } \arrow{d} \\
+            \set{ \text{Ähnlichkeitsklassen in \(M_n(K)\)} },
+        \end{tikzcd}
+    \end{center}
+    die \( [(V,g)] \) die Ähnlichkeitsklasse \( [M_B(b)] \) 
+    der Matrixdarstellung von \(g\) bezüglich irgendeiner 
+    Basis \(B\) von \(V\) zuordnet, ist bijektiv.
+\end{karte}
+
+\begin{karte}{Signatur von Bilinearformen}
+    Sei \(b\) eine symmetrische Bilinearform auf 
+    einem endlich-dimensionalen \(\R\)-Vektorraum \(V\). 
+    Es seien 
+    \begin{align*}
+        n_+ &:= \max\set{ \dim_\R U \;\vert\; U \subset V \text{ Unter-VR und } b\vert_{U\times U} \text{ positiv definit} }, \\
+        n_- &:= \max\set{ \dim_\R U \;\vert\; U \subset V \text{ Unter-VR und } b\vert_{U\times U} \text{ negativ definit} }, \\
+        n_0 &:= \max\set{ \dim_\R U \;\vert\; U \subset V \text{ Unter-VR und } b\vert_{U\times U} = 0 }.
+    \end{align*}
+    Dann bezeichnet man die Differenz \( n_+ - n_- \) 
+    als \textit{Index} von \(b\) und das Tripel \( (n_+, n_-, n_0) \)
+    als \textit{Signatur} von \(b\).
+\end{karte}
+
+\begin{karte}{Trägheitssatz von Sylvester}
+    Sei \( V \) ein endlich-dimensionaler \( \R \)-Vektorraum 
+    mit symmetrischer Bilinearform \(b\). Sei \(A = M_B(b) \in M_n(\R)\) 
+    die darstellende Matrix von \(b\) bezüglich einer Basis 
+    \(B\). Sei \( (n_+,n_-,n_0) \) die Signatur von \(b\). 
+    Dann sind 
+    \[ n_+ = \sum_{\lambda\in \spec_\R(A)\cap(0,\infty)} \dim_\R E_\lambda(A), \]
+    \[ n_- = \sum_{\lambda\in \spec_\R(A)\cap(-\infty,0)} \dim_\R E_\lambda(A), \]
+    \[ n_0 = \dim_\R E_0(A) = \dim_\R \ker A. \]
+    Insbesondere ist \( n = n_+ + n_- + n_0 \).
+\end{karte}
+
+\begin{karte}{Rang einer Bilinearform}
+    Der \textit{Rang} einer symmetrischen Bilinearform \(b\) 
+    auf einem \( K \)-Vektorraum ist der Rang einer 
+    darstellenden Matrix \( M_B(b) \) für irgendeine 
+    Basis \(B\) von \(V\).
+\end{karte}
+
+\begin{karte}{Kongruenz zu Sylvesterform}
+    Sei \(b\) eine symmetrische Bilinearform auf einem 
+    \(n\)-dimensionalen \\
+    \(\R\)-Vektorraum \(V\) mit 
+    Signaturtripel \( (n_+, n_-, n_0) \). Dann gibt 
+    es eine Basis \(C\) von \(V\) so, dass 
+    \[ M_C(b) = \begin{pmatrix}
+        I_{n_+} & 0 & 0 \\
+        0 & -I_{n_-} & 0 \\
+        0 & 0 & 0
+    \end{pmatrix} \in M_n(\R). \]
+    Insbesondere sind zwei quadratische Räume über \(\R\) 
+    genau dann isometrisch, wenn ihre Dimensionen und 
+    Signaturen übereinstimmen.
+\end{karte}
+
+\begin{karte}{Kongruenz zu Diagonalmatrizen}
+    Es sei \(K\) ein Körper mit \( 1_K + 1_K \neq 0_K \). 
+    Sei \(A \in M_n(K)\) eine symmetrische Matrix. Dann 
+    gibt es \( S \in \GL_n(K) \) so, dass \(S^T \cdot A \cdot S\) 
+    eine Diagonalmatrix ist.
+\end{karte}
+
+\begin{karte}{Isometrie zwichen quadratischen Räumen über \(\C\)}
+    Sei \(b\) eine symmetrische Bilinearform auf einem 
+    \(n\)-dimensionalen \\
+    \(\C\)-Vektorraum. Dann gibt es eine 
+    Basis \(C\) von \(V\) so, dass 
+    \[ M_C(b) = \begin{pmatrix}
+        I_k & 0 \\
+        0 & 0
+    \end{pmatrix} \in M_n(\R). \]
+    Insbesondere sind zwei quadratische Räume über \(\C\) 
+    genau dann isometrisch, wenn ihre Dimensionen und Ränge 
+    übereinstimmen.
+\end{karte}
+
 \end{document}
