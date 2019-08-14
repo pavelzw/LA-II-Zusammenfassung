@@ -39,7 +39,7 @@
 \begin{karte}{Definition Skalarprodukt}
     Sei \(V\) ein \(\R\)-Vektorraum. Ein Skalarprodukt auf \(V\) ist eine
     symmetrische, positiv definite Bilinearform.\\
-    Eine positive definite hermitesche Sesquilinearform heißt hermitesches Skalarprodukt.
+    Eine positiv definite hermitesche Sesquilinearform heißt hermitesches Skalarprodukt.
 \end{karte}
 
 \begin{karte}{Definition Sesquilinearform}
@@ -53,7 +53,7 @@
 \end{karte}
 
 \begin{karte}{Definition konjugiert linear}
-    Eine reell lineare Abbildung \(\abb{f}{V}{W}\) zwischen komplexen Vektorräumen,
+    Eine reelle lineare Abbildung \(\abb{f}{V}{W}\) zwischen komplexen Vektorräumen,
     die \(f(\lambda v) = \overline{\lambda}f(v)\) für jedes \(\lambda \in \C\)
     und \(v \in V\) erfüllt, heißt auch \textit{konjugiert linear}.
 \end{karte}
@@ -65,7 +65,7 @@
     \[ b(x,y) = \overline{b(y,x)} \]
     gilt.\\
     Eine hermitesche Sesquilinearform \(b\) auf \(V\) heißt positiv definit,
-    wenn \(b(x,x) > 0\) für alle \(x \in V \setminus \set{0}\)
+    wenn \(b(x,x) > 0\) für alle \(x \in V \setminus \set{0}\).
 \end{karte}
 
 \begin{karte}{Definition adjungierte Matrix}
@@ -113,12 +113,12 @@
 \begin{karte}{Definition induzierte Norm}
     Sei \((V, \scalarprod{\cdot}{\cdot})\) ein euklidischer oder unitärer Vektorraum.
     Dann definieren wir durch
-    \[ \abb{\norm{\cdot}}{V}{\R}, x \mapsto \sqrt{\scalarprod{x}{x}} \]
+    \[ \abb{\norm{\cdot}}{V}{\R}, \quad x \mapsto \sqrt{\scalarprod{x}{x}} \]
     die von \(\scalarprod{\cdot}{\cdot}\) induzierte Norm auf \(V\).\\
     \(\norm{\cdot}_2\) ist die von \(\scalarprod{\cdot}{\cdot}_2\) induzierte Norm und
     wird als euklidische Norm bezeichnet.\\
     Die Supremumsnorm ist definiert durch 
-    \[ \abb{\norm{\cdot}_\infty}{\R^n}{[0,\infty)}, 
+    \[ \abb{\norm{\cdot}_\infty}{\R^n}{[0,\infty)}, \quad
     x \mapsto \max\set{\abs{x_1}, \ldots, \abs{x_n}}. \]
 \end{karte}
 
@@ -156,23 +156,23 @@
     Eine lineare Isometrie \((V, \norm{\cdot}) \rightarrow (V', \norm{\cdot}')\) ist eine
     bijektive lineare isometrische Einbettung \((V, \norm{\cdot}) \rightarrow (V', \norm{\cdot}')\).\\
     Lineare Isometrien sind winkeltreu, d. h. für alle \(x, y \in V \setminus \set{0}\) gilt
-    \[ \angle (f(x), f(y)) = \angle (x,y) \]
+    \[ \angle (f(x), f(y)) = \angle (x,y). \]
 \end{karte}
 
 \begin{karte}{Definition orthogonale Matrix}
     Eine Matrix \(A \in \GL_n(\R)\) heißt orthogonal, falls
     \[ A^{-1} = A^T. \]
-    Eine Matrix \(A \in \GL_n(\C)\) heißt unitär, alls
+    Eine Matrix \(A \in \GL_n(\C)\) heißt unitär, falls
     \[A^{-1} = A^H.\]
 \end{karte}
 
 \begin{karte}{Wichtige Untergruppen von \(\GL_n\)}
     Die folgenden Teilmengen von \(\GL_n(\R)\) bzw. \(\GL_n(\C)\) sind Untergruppen:
     \begin{align*}
-        \mathrm{O}(n) &:= \set{A \in \GL_n(\R) \vert A \text{ orthogonal}} &\text{orthogonale Gruppe}\\
-        \mathrm{U}(n) &:= \set{A \in \GL_n(\R) \vert A \text{ unitär}} &\text{unitärer Gruppe}\\
-        \mathrm{SO}(n) &:= \set{A \in \mathrm{O}(n) \vert \det A = 1} &\text{spezielle orthogonale Gruppe}\\
-        \mathrm{SU}(n) &:= \set{A \in \mathrm{U}(n) \vert \det A = 1} &\text{spezielle unitäre Gruppe}
+        \mathrm{O}(n) &:= \set{A \in \GL_n(\R) \;\vert\; A \text{ orthogonal}} &\text{orthogonale Gruppe}\\
+        \mathrm{U}(n) &:= \set{A \in \GL_n(\R) \;\vert\; A \text{ unitär}} &\text{unitärer Gruppe}\\
+        \mathrm{SO}(n) &:= \set{A \in \mathrm{O}(n) \;\vert\; \det A = 1} &\text{spezielle orthogonale Gruppe}\\
+        \mathrm{SU}(n) &:= \set{A \in \mathrm{U}(n) \;\vert\; \det A = 1} &\text{spezielle unitäre Gruppe}
     \end{align*}
 \end{karte}
 
@@ -196,8 +196,8 @@
     Sei \( V \) ein \(n\)-dimensionaler \(K\)-Vektorraum 
     und \( C=(c_1, \ldots, c_n) \) eine Basis von \(V\).
     Dann sind  
-    \[ \abb{\phi}{\Bil_K(V)}{M_n(K)}, b\mapsto M_C(b) := (b(c_j, c_k))_{j,k\in\set{1,\ldots,n}} \]
-    \[ \abb{\psi}{M_n(K)}{\Bil_K(V)}, A \mapsto b_C(A) \]
+    \[ \abb{\phi}{\Bil_K(V)}{M_n(K)},\quad b\mapsto M_C(b) := (b(c_j, c_k))_{j,k\in\set{1,\ldots,n}} \]
+    \[ \abb{\psi}{M_n(K)}{\Bil_K(V)},\quad A \mapsto b_C(A) \]
     zueinander inverse Isomorphismen.
 \end{karte}
 
@@ -221,9 +221,9 @@
     Sei \( V \) ein \(n\)-dimensionaler \(\C\)-Vektorraum 
     und \( C=(c_1, \ldots, c_n) \) eine Basis von \(V\).
     Dann sind  
-    \[ \abb{\phi}{\Sil_\C(V)}{M_n(\C)}, 
+    \[ \abb{\phi}{\Sil_\C(V)}{M_n(\C)}, \quad
     b\mapsto M_C(b) := (b(c_j, c_k))_{j,k\in\set{1,\ldots,n}} \]
-    \[ \abb{\psi}{M_n(\C)}{\Sil_\C(V)}, A \mapsto b^\C_C(A) \]
+    \[ \abb{\psi}{M_n(\C)}{\Sil_\C(V)},\quad A \mapsto b^\C_C(A) \]
     zueinander inverse Isomorphismen.
 \end{karte}
 
@@ -257,11 +257,11 @@
         \( \scalarprod{v}{w} = 0 \). In diesem Fall 
         schreiben wir auch \(v\bot w\).
         \item \( A, B \subset V \) heißen \textit{orthogonal}, 
-        wenn für \( v\in A, w\in B \) stets \(v\bot w\) gilt.
-        Schreiben \(A\bot B\).
+        wenn für \( v\in A,\ w\in B \) stets \(v\bot w\) gilt.
+        Wir schreiben \(A\bot B\).
         \item Ist \( A\subset V \), so nennen wir 
         \[ A^\bot := \set{ v\in V \;\vert\; v\bot w \text{ für alle } w\in A } \]
-        das \textit{orthogonale Komplement} von \(A\). Das orthonale 
+        das \textit{orthogonale Komplement} von \(A\). Das orthogonale 
         Komplement ist ein Untervektorraum. \( U^\bot \) ist 
         komplementär zu \(U\).
     \end{itemize}
@@ -341,7 +341,7 @@
     \( x,y\in V \) gilt:
     \[ \scalarprod{x}{f(y)} = \scalarprod{f(x)}{y}. \]
     Eine komplexe Matrix ist selbstadjungiert, wenn 
-    \( A^H = A \) und wenn alle Matrixeinträge reell 
+    \( A^H = A \). Wenn alle Matrixeinträge reell 
     sind, ist sie selbstadjungiert, wenn \(A^T = A\).
     \( M_{B,B}(f) \) ist genau dann selbstadjungiert, 
     wenn \(f\) selbstadjungiert ist.
@@ -362,7 +362,7 @@
     \[ M_{B,B}(f^H) = M_{B, B}(f)^H. \]
 \end{karte}
 
-\begin{karte}{Rechenregeln adjungierte Abbildung}
+\begin{karte}{Rechenregeln adjungierter Abbildungen}
     Seien \(\abb{f,g}{V}{V}\) Endomorphismen eines 
     endlich-dimensionalen euklidischen oder unitären 
     Vektorraums. Seien \( \lambda, \mu\in \C \). Dann 
@@ -375,7 +375,7 @@
 \end{karte}
 
 \begin{karte}{Spektralsatz für selbstadjungierte Endomorphismen}
-    Sei \( \abb{f}{V}{V} \) ein selbstadjungierte Endomorphismus 
+    Sei \( \abb{f}{V}{V} \) ein selbstadjungierter Endomorphismus 
     eines \\
     endlich-dimensionalen euklidischen oder unitären 
     Vektorraums. Es bezeichne \( K\in \set{\R, \C} \) 
@@ -432,7 +432,7 @@
     Eigenvektoren von \(f\), wenn \(f\) normal ist.
 \end{karte}
 
-\begin{karte}{Eigenschaften normale Endomorphismen}
+\begin{karte}{Eigenschaften normaler Endomorphismen}
     Sei \(\abb{f}{V}{V}\) normal. Dann gilt: 
     \begin{enumerate}
         \item \( \ker f = \ker f^H \).
@@ -520,7 +520,7 @@
     Winkel \( \phi_1,\ldots, \phi_k \in (0,2\pi)
     \setminus \set{\pi} \) derart, dass 
     \[ M_{B,B}(f) = I_p \boxplus -I_q 
-    \boxplus R_(\phi_1) \boxplus \cdots \boxplus R(\phi_k). \]
+    \boxplus R(\phi_1) \boxplus \cdots \boxplus R(\phi_k). \]
     Dabei bezeichnet 
     \[ R(\phi) = \begin{pmatrix}
         \cos \phi & -\sin \phi \\
@@ -538,7 +538,8 @@
 
 \begin{karte}{Basenunabhängigkeit in \(\R\) und \(\C\)}
     Eine \(\R\)-Basis von \( \ker L(A) \subset \R^n \) 
-    ist zugleich eine \( \C \)-Basis von \( \ker L_\C (A)\subset \C^n \).
+    ist zugleich eine \( \C \)-Basis von \\
+    \( \ker L_\C (A)\subset \C^n \).
 \end{karte}
 
 \begin{karte}{Ent-Diagonalisierung der Rotationsmatrix}
@@ -551,7 +552,7 @@
     \( \R \)-Untervektorraum \( W_z \subset \R^n \) und 
     eine ON-Basis \( B_z = (x_z, y_z) \) von \( W_z \) 
     so, dass 
-    \[ \langle W_z \rangle_\C = \langle z, \overline{z}\rangle_\C \subset \C^n \]
+    \[ \langle W_z \rangle_\C = \langle z, \overline{z}\rangle_\C \subset \C^n, \]
     \[ M_{B_z,B_z}(L(A)\vert_{W_z}) = R(\alpha)
     = \begin{pmatrix}
         \cos \alpha & -\sin \alpha \\
@@ -579,7 +580,7 @@
     höchstens \(n\) Spiegelungen.
 \end{karte}
 
-\begin{karte}{Eigenschaften spezielle Orthogonale Gruppe}
+\begin{karte}{Eigenschaften der speziellen orthogonalen Gruppe}
     \begin{enumerate}
         \item Es gilt \( \mathrm{SO}(2) = \set{R(\phi) \;\vert\; 
         \phi \in [0,2\pi)} \). D. h. \( \mathrm{SO}(2) \) ist 
@@ -650,7 +651,7 @@
 \begin{karte}{Kongruenz}
     Eine Abbildung zwischen euklidischen 
     Vektorräumen ist eine \textit{Kongruenz}
-    oder \textit{affine Isometrie}, wenn es \(f\) 
+    oder \textit{affine Isometrie}, wenn \(f\) 
     zugleich affin und Isometrie ist.\\
     Jede Isometrie eines euklidischen Vektorraums ist 
     eine affine Isometrie.
@@ -714,7 +715,7 @@
 
 \begin{karte}{Kongruente Matrizen}
     Zwei Matrizen \( A,B\in M_n(K) \) sind 
-    \textit{kongruent}, wenn es ein \( S\in \GL_(K) \) 
+    \textit{kongruent}, wenn es ein \( S\in \GL_n(K) \) 
     gibt mit 
     \[ S^T \cdot A \cdot S = B. \]
 \end{karte}
@@ -741,7 +742,7 @@
             \set{ \text{Ähnlichkeitsklassen in \(M_n(K)\)} },
         \end{tikzcd}
     \end{center}
-    die \( [(V,g)] \) die Ähnlichkeitsklasse \( [M_B(b)] \) 
+    die \( [(V,g)] \) die Ähnlichkeitsklasse \( [M_{B,B}(g)] \) 
     der Matrixdarstellung von \(g\) bezüglich irgendeiner 
     Basis \(B\) von \(V\) zuordnet, ist bijektiv.
 \end{karte}
@@ -847,7 +848,7 @@
     Dabei gilt \( a_i > 0 \) für \( i \in \set{1, \ldots, r+s} \).
 \end{karte}
 
-\begin{karte}{Euklidische Normalform in \(\R^2\)}
+\begin{karte}{Euklidische Normalform im \(\R^2\)}
     Eine Quadrik im \( \R^2 \) ist kongruent zu 
     eine der durch folgende Gleichungen 
     beschriebenen Quadriken (dabei ist \(a_1, a_2 \neq 0\)):\\
@@ -875,7 +876,7 @@
     \end{center}}
 \end{karte}
 
-\begin{karte}{Euklidische Normalform in \( \R^3 \) Teil 1}
+\begin{karte}{Euklidische Normalform im \( \R^3 \) Teil 1}
     Eine von \( \emptyset \), Punkt, Gerade und Ebene verschiedene Quadrik des 
     \( \R^3 \) ist kongruent zu einer der folgenden Quadriken: 
     {\renewcommand{\arraystretch}{1.5}
@@ -893,7 +894,7 @@
     \end{center}}
 \end{karte}
 
-\begin{karte}{Euklidische Normalform in \( \R^3 \) Teil 2}
+\begin{karte}{Euklidische Normalform im \( \R^3 \) Teil 2}
     {\renewcommand{\arraystretch}{1.5}
     \begin{center}
     \begin{tabular}{|r|l|}

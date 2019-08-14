@@ -46,28 +46,29 @@
 \end{karte}
 
 \begin{karte}{Satz von Cayley-Hamilton}
-    FÜr einen Endomorphismus \( \abb{f}{V}{V} \) eines endlich-dimensionalen 
+    Für einen Endomorphismus \( \abb{f}{V}{V} \) eines endlich-dimensionalen 
     \( K \)-Vektorraums gilt 
     \[ \chi_f(f) = 0. \]
 \end{karte}
 
-\begin{karte}{Teilerfremdheit}
+\begin{karte}{Teilerfremde Polynome}
     Sind \( p, p', r\in K[X] \) Polynome mit \( p = r \cdot p' \), 
     so nennt man \(r\) \textit{Teiler} von \(p\). Zwei Polynome \(p,q\in K[X]\) heißen 
     \textit{teilerfremd}, falls jeder gemeinsame Teiler konstant ist.\\
     Sind \( p, q\in K[X] \) teilerfremd, so gibt es Polynome \( a,b\in K[X] \) 
     mit \( a\cdot p + b \cdot q = 1 \in K[X] \).\\
-    Zwefällt ein Polynom in Linearfaktoren, so auch jeder Teiler des Polynoms.\\
+    Zerfällt ein Polynom in Linearfaktoren, so auch jeder Teiler des Polynoms.\\
     Seien \( \lambda, \mu \in K \) verschieden. Seien \(n,m\in \N\). Dann sind die 
     Polynome \( (X - \lambda)^n \) und \( (X - \mu)^m \) teilerfremd.
 \end{karte}
 
-\begin{karte}{Teilerfremde Polynome und deren Kerne}
+\begin{karte}{Kerne teilerfremder Polynome}
     Sind \( p,q\in K[X] \) teilerfremde Polynome \( \abb{f}{V}{V} \) 
     ein \(K\)-linearer Endomorphismus, dann gilt 
     \[ \ker(p\cdot q)(f) = \ker p(f) \oplus \ker q(f). \]
     Seien \( \lambda_1, \ldots, \lambda_r \) paarweise verschieden und 
-    \( n_1,\ldots,n_r \in \N \). Seien \( p_i(X) = (X - \lambda_i)^{n_i} 
+    \( n_1,\ldots,n_r \in \N \). \\
+    Seien \( p_i(X) = (X - \lambda_i)^{n_i} 
     \in K[X] \) und \( p(X) \in K[X] \) das Produkt der \( p_1(X), \ldots,p_r(X) \). \\
     Weiter sei \( f\in \hom(V,V) \) ein Endomorphismus. Dann gilt 
     \[ \ker p(f) = \ker p_1(f) \oplus \cdots \oplus \ker p_r(f). \]
@@ -105,7 +106,7 @@
     Konkatenation von \( B_1, \ldots, B_k \) entsteht. 
     Dann gilt 
     \[ M_{BB}(f) = M_{B_1B_1}(f_1) \boxplus \cdots \boxplus M_{B_k B_k}(f_k)
-    \in M_{ n_1 + \cdot n_k }(K). \]
+    \in M_{ n_1 + \cdots + n_k }(K). \]
     Es gilt außerdem \( \det (A_1 \boxplus \cdots \boxplus A_k) = \det A_1 \cdots \det A_k \).
 \end{karte}
 
@@ -114,14 +115,14 @@
 \begin{karte}{\(\lambda\)-Jordankästchen}
     Die Matrix \(J_n(\lambda)\) heißt \(\lambda\)- Jordankästchen der
     Länge \(n\).
-    \[J_4(\lambda)\begin{pmatrix}
+    \[J_4(\lambda) = \begin{pmatrix}
         \lambda &0 &0 &0\\
         1 &\lambda & 0 &0\\
         0 &1 &\lambda &0\\
         0 &0 &1 &\lambda
     \end{pmatrix}\]
-    \(\rk J_n(0) = n-1\)\\
-    \(J_n(0)\) wird auch als Rechtsverschiebung bezeichnet. \(J_n(\lambda)\)
+    \(\rk J_n(0) = n-1\).\\
+    \(J_n(0)\) wird auch als Rechtsverschiebung bezeichnet, \(J_n(\lambda)\)
     als erweiterte \(\lambda\)-Rechtsverschiebung.\\
     Ein Jordankästchen hat nur den Eigenwert \(\lambda\) mit algebraischer Vielfachheit
     von \(n\) und geometrischer Vielfachheit \(1\).
@@ -129,37 +130,37 @@
 
 \begin{karte}{Definition nilpotent}
     Ein Endomorphismus \(f\), für den es ein \(n \in \N\) mit
-    \[ f^n = \underbrace{f \circ \ldots \circ f}_{n \text{ mal}} = 0 \]
+    \[ f^n = \underbrace{f \circ \ldots \circ f}_{n\text{-mal}} = 0 \]
     gibt, heißt nilpotent.\\
-    \(\spec f = \set{0}\)
+    \(\spec f = \set{0}\).
 \end{karte}
 
-\begin{karte}{Nilpotenter Endomorphismus lineare Unabhängigkeit}
+\begin{karte}{Nilpotenter Endomorphismus \textendash{} lineare Unabhängigkeit}
     Sei \(\abb{f}{V}{V}\) nilpotent. Sei \(v \in V\setminus \set{0}\)
     und \(d \in \N\) so, dass \(f^d(v) = 0\), aber \(f^{d-1}(v) \neq 0\).
     Dann ist \((v,f(v),\ldots, f^{d-1}(v))\) linear unabhängig.
 \end{karte}
 
-\begin{karte}{Ähnlichkeit zur Jordan-Normalform Matrizen}
+\begin{karte}{Ähnlichkeit zur Jordan-Normalform \textendash{} Matrizen}
     Sei \(K\) algebraisch abgeschlossen. Dann ist jede Matrix \(A \in M_n(K)\)
     zu einer Matrix in Jordan-Normalform ähnlich, d. h. es gibt \(S \in GL_n(K)\)
     und \(\lambda_1, \ldots, \lambda_k \in K\) und \(n_1, \ldots, n_k \in \N\)
-    mit \(n = n_1 + \ldots + n_k\) so, dass
+    mit \(n = n_1 + \cdots + n_k\) so, dass
     \[ S^{-1}AS = J_{n_1}(\lambda_1) \boxplus \ldots \boxplus 
     J_{n_k}(\lambda_k) \in M_n(K). \]
     Die Matrix auf der rechten Seite wird dann eine Jordan-Normalform von \(A\)
     genannt. Die Basis \((Se_1, \ldots, Se_n)\) wird Jordan-Basis genannt.
 \end{karte}
 
-\begin{karte}{Ähnlichkeit zur Jordan-Normalform Endomorphismen}
+\begin{karte}{Ähnlichkeit zur Jordan-Normalform \textendash{} Endomorphismen}
     Sei \(K\) algebraisch abgeschlossen. Sei \(\abb{f}{V}{V}\) ein Endomorphismus
     eines endlich-dimensionalen \(K\)-Vektorraums \(V\). Dann gibt es eine Basis
-    \(B\) von \(V\) - genannt Jordan-Basis - derart, dass
-    \[ M_ {B,B}(f) = J_{n_1}(\lambda_1) \boxplus \ldots \boxplus J_{n_k}(\lambda_k)
-    \in M_n(K) \]
+    \(B\) von \(V\) (genannt Jordan-Basis) derart, dass
+    \[ M_ {B,B}(f) = J_{n_1}(\lambda_1) \boxplus \cdots \boxplus J_{n_k}(\lambda_k)
+    \in M_n(K). \]
 \end{karte}
 
-\begin{karte}{Satz Ähnlichkeitsklassifikation}
+\begin{karte}{Ähnlichkeitsklassifikation}
     Sei \(K\) algebraisch abgeschlossen. Zwei Matrizen in \(M_n(K)\) sind genau dann 
     ähnlich, wenn sie Jordan-Normalformen besitzen, die bis auf eine Permutation der 
     Jordankästchen übereinstimmen.\\
@@ -167,7 +168,7 @@
     ähnlich, dann auch über \(F\).
 \end{karte}
 
-\subsection*{Eindeutigkeit \& Struktur der JNF}
+\subsection*{Eindeutigkeit u. Struktur der JNF}
 
 \begin{karte}{Verallgemeinerte geometrische Vielfachheiten}
     Sei \(\abb{f}{V}{V}\) ein Endomorphismus eines endlich-dimensionalen \\
@@ -181,7 +182,7 @@
 
 \begin{karte}{Ähnlichkeit und verallgemeinerte geometrische Vielfachheiten}
     Sind \(A, B \in M_n(K)\) ähnlich, so ist
-    \[ m_{\lambda, s}(A) = m_{\lambda, s}(B) \; \forall s \in \N_0, \lambda \in K \]
+    \[ m_{\lambda, s}(A) = m_{\lambda, s}(B) \; \forall s \in \N_0, \lambda \in K. \]
 \end{karte}
 
 \begin{karte}{Definition Hauptraum}
@@ -189,7 +190,7 @@
     \[ H_\lambda(f) := \bigcup_{s \in \N} \ker (f-\lambda \id)^s \]
     der Hauptraum von \(f\) zum Eigenwert \(\lambda\).\\
     Sei \(e\) die algebraische Vielfachheit von \(\lambda\), dann
-    \[ H_\lambda(f) = \ker(f-\lambda\id)^e. \]
+    \[ H_\lambda(f) = \ker(f-\lambda\id)^e, \]
     \[ \dim H_\lambda(f) = m_{\lambda, e}(f) = e. \]
 \end{karte}
 
@@ -198,10 +199,10 @@
     Sei \(\abb{f}{V}{V}\) ein Endomorphismus. Wenn \(\chi_f\) in Linearfaktoren
     zerfällt und \(\lambda_1, \ldots, \lambda_r\) die verschiedenen Eigenwerte
     von \(f\) sind, dann gilt
-    \[ V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f) \]
+    \[ V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f). \]
 \end{karte}
 
-\begin{karte}{Interpretation allgebraische und geometrische Vielfachheit}
+\begin{karte}{Interpretation algebraische und geometrische Vielfachheit}
     Sei \(A \in M_n(K)\) und \(\lambda \in \spec A\). Weiter sei eine JNF von \(A\)
     gegeben.
     \begin{enumerate}
@@ -228,7 +229,7 @@
     \[ M_{B,B}(f) = J_{n_1}(0) \boxplus \cdots \boxplus J_{n_k}(0) \in M_n(K). \]
 \end{karte}
 
-\begin{karte}{Nilpotente Endomorphismen Untervektorraumkomplemente}
+\begin{karte}{Untervektorraumkomplemente nilpotenter Endomorphismen}
     Sei \(\abb{f}{V}{V}\) ein nilpotenter Endomorphismus eines endlich-dimensionalen
     \(K\)-Vektorraums \(V\). Sei \(f^d = 0\) und \(u \in V\) ein Vektor mit
     \(f^{d-1}(u) \neq 0\). Dann besitzt der \(f\)-zyklische Untervektorraum
@@ -246,7 +247,7 @@
         des Komplements von \(\ker f^{n_1-1}\).
         \item Definiere \(B_1\) als das Tupel\\
         \( \left(v_1^{(1)}, \ldots, f^{n_1-1}\left(v_1^{(1)}\right), \ldots,
-        v_{a_1}^{(1)}, \ldots, f^{n_1-1}\left(v_{a_1}^{(1)}\right)\right) \)\\
+        v_{a_1}^{(1)}, \ldots, f^{n_1-1}\left(v_{a_1}^{(1)}\right)\right) \).\\
         Dann ist \(V_1:=\langle B_1 \rangle \; f\)-invariant und
         \( M_{B_1,B_1}(f\vert_{V_1}) = J_{n_1}(0) \boxplus \cdots \boxplus J_{n_1}(0) \)
         \item Sei \(B_i\) gegeben. Bestimme eine Basis \((v_1^{(i+1)},\ldots, v_{a_{i+1}}^{(i+1)})\)
@@ -255,30 +256,31 @@
         und setze:
         \[ B_{i+1} = \left(v_{i+1}^{(i+1)}, \ldots, f^{n_{i+1}-1}\left(v_{i+1}^{(i+1)}\right), \ldots,
         v_{a_{i+1}}^{(i+1)}, \ldots, f^{n_{i+1}-1}\left(v_{a_{i+1}}^{(i+1)}\right)\right) \]
-        \[ V_{i+1} = V_i + \langle B_{i+1} \rangle \]
+        \[ V_{i+1} = V_i + \langle B_{i+1} \rangle. \]
         \item Die Konkatenation von den \(B_i\) ist eine Jordan-Basis für \(f\).
     \end{enumerate}    
 \end{karte}
 
-\begin{karte}{JNF Rechenverfahren allgemein}
+\begin{karte}{Allgemeines JNF-Rechenverfahren}
     Sei \(f\) ein Endomorphismus eines \(n\)-dimensionalen \(K\)-Vektorraums \(V\),
     für den \(\chi_f(X)\) in Linearfaktoren zerfällt.
     \begin{enumerate}
         \item Man zerlege das charakteristische Polynom von \(f\) in
         Linearfaktoren
         \[ \chi_f(X) = (-1)^n (X-\lambda_1)^{n_1}\cdots (X-\lambda_k)^{n_k} \]
-        mit verschiedenen \(\lambda_1, \ldots, \lambda_k \in K\)
+        mit verschiedenen \(\lambda_1, \ldots, \lambda_k \in K\).
         \item Für jedes \(i \in \set{i,\ldots,k}\) berechne gemäß Rechenverfahren
-        1.58 eine Jordan-Basis \(B_i\) des nilpotenten Endomorphismus
-        \( (f-\lambda \id)\vert_{H_{\lambda_i}(f)} \).
+        für nilpotente Endomorphismen eine Jordan-Basis \(B_i\) des nilpotenten 
+        Endomorphismus \( (f-\lambda \id)\vert_{H_{\lambda_i}(f)} \).
         \item Die Konkatenation der \(B_i\) bildet eine Jordan-Basis von \(f\),
-        weil \(V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f)\).
+        weil \\
+        \(V = H_{\lambda_1}(f) \oplus \cdots \oplus H_{\lambda_r}(f)\).
     \end{enumerate}
 \end{karte}
 
 \subsection*{Anwendung der JNF}
 
-\begin{karte}{Ähnlichkeit transponierte Matrix}
+\begin{karte}{Ähnlichkeit transponierter Matrizen}
     Sei \(K\) ein beliebiger Körper und \(A \in M_n(K)\). Dann ist 
     \(A\) zur transponierten Matrix \(A^T\) ähnlich.
 \end{karte}
