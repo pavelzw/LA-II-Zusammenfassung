@@ -1,0 +1,97 @@
+\documentclass[main.tex]{subfiles}
+\begin{document}
+
+\section*{Multilineare Algebra}
+\subsection*{Das Tensorprodukt}
+
+\begin{karte}{Tensorprodukt}
+    Sei \( K \) ein Körper und \( V,W \) Vektorräume über 
+    \( K \). Dann gibt es einen \(K\)-Vektorraum \( V \otimes_K W \) 
+    und eine bilineare Abbildung \( V \times W \rightarrow V\otimes_K W \) 
+    mit folgender universeller Eigenschaft:
+
+    Für jeden \( K \)-Vektorraum \( Z \) und jede bilineare Abbildung 
+    \( \abb{f}{V\times W}{Z} \) gibt es genau eine lineare Abbildung 
+    \( \abb{f_\otimes}{V\otimes_K W}{Z} \) so, dass das folgende Diagramm kommutiert:
+    \begin{center}
+        \begin{tikzcd}
+            V \times W \arrow{rd}{f} \arrow{d}{\otimes} \\
+            V \otimes_K W \arrow{r}{f_\otimes} & Z
+        \end{tikzcd}
+    \end{center}
+    Der \( K \)-Vektorraum \( V \otimes_K W \) und die 
+    Abbildung \( \abb{\otimes}{V\times W}{V \otimes_K W} \) 
+    sind durch diese universelle Eigenschaft bis auf 
+    kanonische Isomorphie eindeutig bestimmt. Man 
+    bezeichnet \( V \otimes_K W \) als das \textit{Tensorprodukt} 
+    von \( V \) und \(W\) über \(K\).
+\end{karte}
+
+\begin{karte}{Tensor Vektorräume}
+    Die folgenden Abbildungen sind wohldefinierte zueinander inverse 
+    Isomorphismen von \(K\)-Vektorräumen:
+    \[ K\otimes_K V \rightarrow V, \lambda \otimes v \mapsto \lambda \cdot v \]
+    \[ V \rightarrow K \otimes_K V, v \mapsto 1 \otimes v \]
+\end{karte}
+
+\begin{karte}{Tensorabbildung}
+    Sind \( \abb{f}{V}{V'} \) und \( \abb{g}{W}{W'} \) 
+    lineare Abbildungen, so definiert 
+    \[ \abb{ f \otimes_K g }{V \otimes_K W}{V' \otimes_K W'}, 
+    v \otimes w \mapsto f(v) \otimes g(w) \]
+    eine wohldefinierte lineare Abbildung.\\
+    Dabei gilt \( \id_V \otimes_K \id_W = \id_{V \otimes_K W} \) 
+    und diese Konstruktion ist mit der Komposition von Abbildungen 
+    verträglich.
+\end{karte}
+
+\begin{karte}{Rechenregeln Tensorprodukt}
+    Das Tensorprodukt erfüllt folgende kanonische Isomorphismen:
+    \begin{description}
+        \item[Kommutativität] 
+        \[ U \otimes_K V \overset{\cong}{\longrightarrow} V \otimes_K U, \quad
+        u \otimes v \mapsto v\otimes u. \]
+        \item[Assoziativität]
+        \[ U \otimes_K (V \otimes_K W) \overset{\cong}{\longrightarrow} 
+        ( U \otimes_K V ) \otimes_K W, \quad 
+        u \otimes (v\otimes w) \mapsto (u\otimes v) \otimes w. \]
+        \item[Verträglichkeit mit direkten Summen]
+        \[ V \otimes_K \bigoplus_{i\in I} W_i \overset{\cong}{\longrightarrow} 
+        \bigotimes_{i \in I} (V \otimes_K W_i), \quad 
+        v \otimes \sum w_i \mapsto \sum v \otimes w_i. \] 
+        \item[Exponentialgesetz]
+        \[ \hom_K(V \otimes_K W, U) \overset{\cong}{\longrightarrow} 
+        \hom_K(W, \hom_K(V, U)), \]
+        \[ f \mapsto \left(w \mapsto (v\mapsto f(v\otimes w))\right). \]
+    \end{description}
+\end{karte}
+
+\begin{karte}{Dimension Tensorräume}
+    Es seien \(V\) und \(W\) endlich-dimensionale \(K\)-Vektorräume. 
+    Dann gilt:
+    \[ \dim_K (V \otimes_K W) = \dim_K(V) \cdot \dim_K(W). \]
+\end{karte}
+
+\begin{karte}{Isomorphismus Dualräume}
+    Es seien \(V\) und \(W\) endlich-dimensionale \(K\)-Vektorräume. Die 
+    Abbildung 
+    \[ V^* \otimes_K W \rightarrow \hom_K(V,W), 
+    \phi \otimes w \mapsto (v\mapsto \phi(v) \cdot w) \]
+    ist ein (wohldefinierter) Isomorphismus.
+\end{karte}
+
+\subsection*{Anwendungen Tensorprodukt}
+
+\begin{karte}{Koordinatenfreie Beschreibung der Spur}
+    Sei \(V\) endlich-dimensional. Sei \( \abb{\psi}{\hom_K(V,V)}{V^* \otimes V} \) 
+    das Inverse des Isomorphismus 
+    \[ \phi:V^* \otimes_K V\overset{\cong}{\longrightarrow} \hom_K(V,V), \quad 
+    \phi \otimes v \mapsto (x \mapsto \phi(x) \cdot v). \]
+    Sei 
+    \[ \abb{E}{V^* \otimes_K V}{K}, \quad \phi \otimes v \mapsto \phi(v) \] 
+    die Auswertungsabbildung. Dann gilt für jeden Endomorphismus 
+    \( \abb{f}{V}{V} \) 
+    \[ \Spur f = E \circ \psi(f). \]
+\end{karte}
+
+\end{document}

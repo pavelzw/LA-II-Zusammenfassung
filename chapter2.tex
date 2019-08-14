@@ -816,4 +816,98 @@
     übereinstimmen.
 \end{karte}
 
+\subsection*{Quadriken}
+
+\begin{karte}{Quadrik}
+    Sei \( q \) eine nicht-verschwindende quadratische 
+    Form auf \( \R^n, b\in \R^n \) und \( c\in \R \). 
+    Eine \textit{Quadrik} in \( \R^n \) ist eine Menge 
+    der Form 
+    \[ Q = \set{x \in \R^n \;\vert\; q(x) + 2\scalarprod{b}{x}_2 = c}. \]
+\end{karte}
+
+\begin{karte}{Kongruente Quadriken}
+    Zwei Quadriken \(Q_1\) und \(Q_2\) in 
+    \(\R^n\) sind \textit{kongruent}, wenn es 
+    eine Kongruenz \( \abb{f}{\R^n}{\R^n} \) 
+    mit \( f(Q_1) = Q_2 \) gibt.
+\end{karte}
+
+\begin{karte}{Hauptachsentransformation}
+    Eine Quadrik des \( \R^n \) 
+    \[ Q = \set{ x\in \R^n \;\vert\; \scalarprod{x}{Ax}_2 
+    + 2 \cdot \scalarprod{x}{b}_2 + c = 0 } \]
+    ist kongruent zu einer Quadrik mit einer Gleichung der 
+    folgenden Form (\textit{metrische Normalform}):
+    \begin{align*}
+        \sum_{i=1}^r \frac{x_i^2}{a_i^2} - \sum_{j=r+1}^{r+s} \frac{x_j^2}{a_j^2} &= 0. \\
+        \sum_{i=1}^r \frac{x_i^2}{a_i^2} - \sum_{j=r+1}^{r+s} \frac{x_j^2}{a_j^2} &= 1. \\
+        \sum_{i=1}^r \frac{x_i^2}{a_i^2} - \sum_{j=r+1}^{r+s} \frac{x_j^2}{a_j^2} &= x_{r+s+1}.
+    \end{align*}
+    Dabei gilt \( a_i > 0 \) für \( i \in \set{1, \ldots, r+s} \).
+\end{karte}
+
+\begin{karte}{Euklidische Normalform in \(\R^2\)}
+    Eine Quadrik im \( \R^2 \) ist kongruent zu 
+    eine der durch folgende Gleichungen 
+    beschriebenen Quadriken (dabei ist \(a_1, a_2 \neq 0\)):\\
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{center}
+        \begin{tabular}{|r|l|}
+            \hline
+            \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} = 0 \) & Punkt \\
+            \hline
+            \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 0 \) & schneidendes Geradenpaar \\
+            \hline
+            \( \frac{x_1^2}{a_1^2} = 0 \) & Doppelgerade \\
+            \hline
+            \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 1 \) & Hyperbel \\
+            \hline 
+            \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} = 1 \) & Ellipse \\
+            \hline 
+            \( - \frac{x_1^2}{a_1^2} = 1 \) oder \( - \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 1 \) & leere Menge \\
+            \hline 
+            \( \frac{x_1^2}{a_1^2} = 1 \) & paralleles Geradenpaar \\
+            \hline 
+            \( \frac{x_1^2}{a_1^2} = 2x_2 \) & Parabel \\
+            \hline
+        \end{tabular}
+    \end{center}}
+\end{karte}
+
+\begin{karte}{Euklidische Normalform in \( \R^3 \) Teil 1}
+    Eine von \( \emptyset \), Punkt, Gerade und Ebene verschiedene Quadrik des 
+    \( \R^3 \) ist kongruent zu einer der folgenden Quadriken: 
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{center}
+    \begin{tabular}{|r|l|}
+        \hline
+        \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} - \frac{x_3^2}{a_3^2} = 0 \) & Kegel \\
+        \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 0 \) & Paar sich schneidender Ebenen \\
+        \hline 
+        \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} + \frac{x_3^2}{a_3^2} = 1 \) & Ellipsoid \\
+        \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} - \frac{x_3^2}{a_3^2} = 1 \) & Einschaliges Hyperboloid \\
+        \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} - \frac{x_3^2}{a_3^2} = 1 \) & Zweischaliges Hyperboloid \\
+        \hline
+    \end{tabular}
+    \end{center}}
+\end{karte}
+
+\begin{karte}{Euklidische Normalform in \( \R^3 \) Teil 2}
+    {\renewcommand{\arraystretch}{1.5}
+    \begin{center}
+    \begin{tabular}{|r|l|}
+        \hline
+        \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} = 1 \) & Elliptischer Zylinder \\
+        \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 1 \) & Hyperbolischer Zylinder \\
+        \( \frac{x_1^2}{a_1^2} = 1 \) & Paar paralleler Ebenen \\
+        \hline 
+        \( \frac{x_1^2}{a_1^2} + \frac{x_2^2}{a_2^2} = 2x_3 \) & Elliptisches Paraboloid \\
+        \( \frac{x_1^2}{a_1^2} - \frac{x_2^2}{a_2^2} = 2x_3 \) & Hyperbolisches Paraboloid \\
+        \( \frac{x_1^2}{a_1^2} = 2x_3 \) & Parabolischer Zylinder \\
+        \hline
+    \end{tabular}
+    \end{center}}
+\end{karte}
+
 \end{document}
